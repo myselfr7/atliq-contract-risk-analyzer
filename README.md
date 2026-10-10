@@ -4,6 +4,8 @@ A review assistant for a founder-led IT services company with no legal team. It 
 
 Built for Capstone 2 of the Codebasics AI PM Cohort (Oct 2026) by Rahul. All data is synthetic. Not legal advice.
 
+**Live prototype:** https://atliq-contract-risk-analyzer-teal.vercel.app (Vercel free tier, auto-deployed from `main`). Model: Claude Sonnet 5.
+
 ## What it does
 
 1. **Header facts** are extracted from the contract into a fixed schema (parties, AtliQ entity, country, law, courts, data types, documents referenced, insurance, payment days).
