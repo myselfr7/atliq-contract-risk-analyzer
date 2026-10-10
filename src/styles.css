@@ -28,6 +28,14 @@ th { background: #e3ecf5; }
 .quote { font-family: Consolas, monospace; font-size: 12px; background: #f1f4f8; padding: 3px 6px; border-radius: 3px; display: block; white-space: pre-wrap; }
 .muted { color: #666; font-size: 12px; }
 .progress { padding: 10px; background: #eef2f6; border-radius: 4px; font-family: Consolas, monospace; font-size: 13px; }
+.card.wait { border-left: 5px solid var(--amber); background: #fdf9ec; }
+.steps { list-style: none; padding: 0; margin: 6px 0; }
+.steps li { padding: 4px 0; color: #777; }
+.steps li.done { color: #1c1c1c; }
+.steps li.active { color: var(--navy); font-weight: 600; animation: pulse 1.4s ease-in-out infinite; }
+.steps .mark { display: inline-block; width: 18px; color: var(--green); }
+.steps li.active .mark { color: var(--amber); }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
 .err { background: #fdf3f2; border: 1px solid var(--red); padding: 8px 10px; border-radius: 4px; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }

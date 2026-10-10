@@ -64,6 +64,13 @@ function Review() {
   const [mode, setMode] = useState("pick");
   const [state, setState] = useState({ running: false, stage: "", chars: 0, facts: null, rules: null, result: null, error: null, started: 0 });
   const [override, setOverride] = useState({ step: "", reason: "" });
+  // A ticking clock while a review runs, so the elapsed time on screen moves even when no event arrives.
+  const [now, setNow] = useState(Date.now());
+  useEffect(() => {
+    if (!state.running) return;
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, [state.running]);
 
   useEffect(() => { fetch("/contracts.json").then((r) => r.json()).then((l) => { setContracts(l); if (l[0]) setSel(l[0].id); }).catch(() => {}); }, []);
   const current = useMemo(() => contracts.find((c) => c.id === sel), [contracts, sel]);
@@ -133,11 +140,12 @@ function Review() {
         )}
         <div className="row" style={{ marginTop: 10 }}>
           <button className="primary" disabled={state.running || (mode === "paste" && pasted.length < 200)} onClick={go}>{state.running ? "Reviewing..." : "Run review"}</button>
-          {state.running && <span className="progress">{state.stage} · {state.chars.toLocaleString()} characters written · {Math.round((Date.now() - state.started) / 1000)}s</span>}
+          {state.running && <span className="progress">{state.stage} · {Math.round((now - state.started) / 1000)} s</span>}
         </div>
         {state.error && <p className="err">Review failed: {state.error}. Nothing was decided. Try again or review manually.</p>}
       </div>
 
+      {state.running && <WaitingCard stage={state.stage} facts={state.facts} rules={state.rules} chars={state.chars} seconds={Math.round((now - state.started) / 1000)} words={mode === "pick" ? current?.words : Math.round(pasted.split(/\s+/).length)} />}
       {state.facts && !r && <FactsCard facts={state.facts} rules={state.rules} />}
 
       {r && (
@@ -216,6 +224,35 @@ function Review() {
         </>
       )}
     </>
+  );
+}
+
+// Shown while a review runs. The header facts and the rules table arrive in seconds; the clause-by-clause
+// review takes one to three minutes, and without this card the page looked finished when it was not.
+function WaitingCard({ stage, facts, rules, chars, seconds, words }) {
+  // Golden set: 45 s for a 1,000-word NDA, 142 s for a 3,400-word MSA. Rough guide only.
+  const expect = words ? Math.max(1, Math.round((45 + (words / 3400) * 100) / 30) * 0.5) : null;
+  const steps = [
+    { k: "facts", label: "Read the header facts (parties, entity, law, data types, documents)", done: !!facts, active: !facts },
+    { k: "rules", label: "Apply the entity, country and paperwork rules (no AI)", done: !!rules, active: !!facts && !rules },
+    { k: "review", label: "Review every clause against the register, the precedents and both sides' positions", done: false, active: stage === "reviewing clauses" },
+    { k: "verify", label: "Match every quote back to the source text and filter forbidden phrases", done: false, active: false },
+  ];
+  return (
+    <div className="card wait" data-key="wait">
+      <h2>Review in progress: please wait for the AI summary and the clause table</h2>
+      <ul className="steps">
+        {steps.map((s) => (
+          <li key={s.k} className={s.done ? "done" : s.active ? "active" : ""}>
+            <span className="mark">{s.done ? "✓" : s.active ? "▶" : "○"}</span> {s.label}
+            {s.k === "review" && s.active && <span className="muted"> · {chars > 0 ? `${chars.toLocaleString()} characters written so far` : "the model is reading the contract and the register; the first words usually arrive after 10 to 30 seconds"}</span>}
+          </li>
+        ))}
+      </ul>
+      <p className="muted">
+        {seconds} s elapsed{expect ? `, usually ${expect} to ${expect + 1} minutes for a ${words.toLocaleString()}-word document` : ""}. The facts and rules above are final; the brief, the conflicts and the clause table appear together when the review finishes. Nothing is decided until you record a decision at the bottom.
+      </p>
+    </div>
   );
 }
 
