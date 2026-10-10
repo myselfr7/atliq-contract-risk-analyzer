@@ -13,8 +13,10 @@ export const GOLDEN = [
   { id: "2026-09-26_kriti_data_labs_subcontractor_agreement_draft", scenario: "AtliQ's own paper unfair to a 12-person agency", expect: (r) => r.facts.is_atliq_paper && r.review.mutuality.one_sided_clauses.length > 0 },
   { id: "2026-09-10_harrington_health_msa_draft", scenario: "Healthcare deal with documents missing (BAA chain, insurance gap)", expect: (r) => r.rules.findings.some((f) => f.check === "paperwork" && f.status !== "ok") && r.rules.findings.some((f) => f.check === "regulated data") },
   { id: "2026-09-27_loopmart_mutual_nda_draft", scenario: "The clean one: should not raise a conflict", expect: (r) => r.review.register_conflicts.length === 0 && r.review.suggested_next_step !== "escalate" },
-  { id: "2026-09-21_blueorchid_hotels_pilot_agreement_draft", scenario: "Only looks risky: Indian hotels, outside the GCC non-compete", expect: (r) => !r.review.register_conflicts.some((c) => c.severity === "conflict" && /al noor/i.test(c.explanation + c.register_id)) },
+  { id: "2026-09-21_blueorchid_hotels_pilot_agreement_draft", scenario: "Looks India-only (Jay: 'just India hotels I think') but Annexure B lists Dubai and Muscat properties: must conflict with Al Noor", expect: (r) => r.review.register_conflicts.some((c) => c.severity === "conflict" && /al noor|R-015|R-047/i.test(c.explanation + c.register_id + c.register_clause_quote)) },
 ];
+// Note: the first version of this test expected BlueOrchid to be clean, on the strength of the seller's tracker note.
+// The contract's own property list says otherwise. Corrected 10 Oct 2026 after the model flagged it.
 
 export async function runOne(client, data, id) {
   const c = listContracts().find((x) => x.id === id);
@@ -44,7 +46,13 @@ if (process.argv[1] && process.argv[1].endsWith("golden_test.mjs")) {
       console.log(`ERROR ${e.message}`);
     }
   }
-  const summary = { run_at: new Date().toISOString(), model: MODEL, passed: results.filter((r) => r.pass).length, total: results.length, results };
+  // When only some ids were run, merge into the previous results so the stored file stays complete.
+  let merged = results;
+  if (only.length && fs.existsSync("data/golden_results.json")) {
+    const prev = JSON.parse(fs.readFileSync("data/golden_results.json", "utf8")).results || [];
+    merged = GOLDEN.map((g) => results.find((r) => r.id === g.id) || prev.find((r) => r.id === g.id)).filter(Boolean);
+  }
+  const summary = { run_at: new Date().toISOString(), model: MODEL, passed: merged.filter((r) => r.pass).length, total: merged.length, results: merged };
   fs.writeFileSync("data/golden_results.json", JSON.stringify(summary, null, 2));
   fs.mkdirSync("public", { recursive: true });
   fs.writeFileSync("public/golden_results.json", JSON.stringify(summary, null, 2));

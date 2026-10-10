@@ -1,0 +1,2746 @@
+{
+  "run_at": "2026-10-10T08:16:44.048Z",
+  "model": "claude-opus-5-5",
+  "passed": 5,
+  "total": 8,
+  "results": [
+    {
+      "id": "2026-09-18_gulf_crown_hotels_msa_draft",
+      "scenario": "Collides with something already signed (Al Noor GCC hospitality non-compete)",
+      "pass": true,
+      "result": {
+        "id": "2026-09-18_gulf_crown_hotels_msa_draft",
+        "title": "MASTER SERVICES AGREEMENT",
+        "facts": {
+          "document_type": "MSA",
+          "parties": [
+            "Gulf Crown Hotels & Resorts Co.",
+            "AtliQ Technologies Pvt Ltd"
+          ],
+          "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+          "counterparty": "Gulf Crown Hotels & Resorts Co.",
+          "counterparty_country": "Saudi Arabia",
+          "governing_law": "Kingdom of Saudi Arabia",
+          "courts_or_arbitration": "Competent courts in the City of Riyadh, Kingdom of Saudi Arabia (exclusive jurisdiction), after 30 days of senior executive negotiation",
+          "currency": "USD",
+          "value_usd_estimate": 140000,
+          "data_types": [
+            "guest data"
+          ],
+          "documents_referenced": [
+            "Schedule 1 - Specifications",
+            "Schedule 2 - Properties",
+            "Schedule 3 - Milestones and Payment",
+            "Personal Data Protection Law (Royal Decree No. M/19) and Implementing Regulations",
+            "Change request"
+          ],
+          "is_atliq_paper": false,
+          "is_labelled_mutual": false,
+          "cyber_insurance_required_usd": null,
+          "payment_days": 60,
+          "deal_category": "client services"
+        },
+        "rules": {
+          "region": "Middle East",
+          "expected_entity": "AtliQ Technologies Pvt Ltd",
+          "findings": [
+            {
+              "check": "entity",
+              "status": "ok",
+              "text": "AtliQ Technologies Pvt Ltd is the expected entity for a Saudi Arabia counterparty."
+            },
+            {
+              "check": "governing law",
+              "status": "attention",
+              "text": "Governing law is the counterparty's (Kingdom of Saudi Arabia). AtliQ has no presence there. Acceptable only as a deliberate trade (Northwind, Al Noor precedent); note the cost of enforcing or defending abroad. Courts: Competent courts in the City of Riyadh, Kingdom of Saudi Arabia (exclusive jurisdiction), after 30 days of senior executive negotiation."
+            },
+            {
+              "check": "regulated data",
+              "status": "attention",
+              "text": "guest data: Guest or customer personal data of a Gulf client: check local data-protection and residency requirements (UAE PDPL, KSA PDPL). Confirm with counsel."
+            },
+            {
+              "check": "paperwork",
+              "status": "attention",
+              "text": "For a \"client services\" deal the following are expected and not evidenced in this document: NDA (recommended before scoping); Statement of work. Confirm each exists and is signed before data or work moves."
+            },
+            {
+              "check": "payment terms",
+              "status": "attention",
+              "text": "Payment at 60 days; AtliQ's checklist says 30, 45 at most (Trustline precedent: 90 negotiated to 45)."
+            }
+          ]
+        },
+        "review": {
+          "summary": "Gulf Crown Hotels & Resorts Co. (Riyadh, KSA) sent its own MSA to AtliQ Technologies Pvt Ltd. The deal is USD 140,000 over 36 months to build a revenue management and guest analytics platform for nine hotels in Saudi Arabia. The most serious problem is the Al Noor non-compete (R-015), which is live: Al Noor's term runs to 14 March 2028, plus 18 months after that. It bars AtliQ and its Affiliates from providing data analytics, AI or revenue-management services to any Hospitality Business in the GCC, and Saudi Arabia is in the GCC. The only waiver on record (R-046) covers the Seaside SOW alone. Signing would also make the warranty in Clause 9.1(d) untrue on day one. Possible further conflicts are the CloudSpan exclusivity (R-030), depending on which cloud platform is used, and the Crestline pricing promise (R-004). Other points: guest personal data under KSA PDPL with hosting in KSA; uncapped liability for confidentiality and data-protection breaches; liquidated damages at 1% of the whole Contract Value per week, capped at 10%; payment at 60 days; Saudi law and Riyadh courts; the Arabic text prevails but has not been provided; and termination pays only for accepted work.",
+          "register_conflicts": [
+            {
+              "register_id": "R-015",
+              "severity": "conflict",
+              "incoming_clause_quote": "The Service Provider shall design, develop, test, deploy and support a revenue management and guest analytics platform for the Company's nine (9) Properties located in the Kingdom of Saudi Arabia",
+              "register_clause_quote": "the Supplier undertakes that neither it nor any of its Affiliates shall, during the Restricted Period, directly or indirectly, provide data analytics, artificial intelligence or revenue-management services to any Hospitality Business in the GCC.",
+              "explanation": "Gulf Crown owns and operates hotels and resorts in Saudi Arabia, which is in the GCC, so it is a Hospitality Business under the Al Noor MSA. The services are revenue management, guest analytics and AI/propensity models, which is exactly the restricted scope. The restriction binds AtliQ Technologies Pvt Ltd, the entity named here. It lasts for the Al Noor term (to 14 March 2028 unless terminated early) plus 18 months, so it is live today. Only a written waiver from Al Noor under its clause 12.4 would remove the conflict.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-047",
+              "severity": "conflict",
+              "incoming_clause_quote": "the Company owns and operates a portfolio of hotels and resorts within the Kingdom of Saudi Arabia",
+              "register_clause_quote": "It does not extend to ... (b) any other Hospitality Business, whether in the Sultanate of Oman or elsewhere in the GCC; or (c) any Affiliate of the Supplier. ... Save as expressly set out in paragraph 2 above, all other terms of Clause 12 remain in full force and effect",
+              "explanation": "In the February 2026 consent letter AtliQ expressly reaffirmed that the Clause 12 restriction still applies to every other GCC Hospitality Business. Gulf Crown is one of them. The Seaside consent (R-046) cannot be relied on for this deal; a fresh written consent would be needed.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-015",
+              "severity": "conflict",
+              "incoming_clause_quote": "it is not bound by any agreement or restriction which would prevent or restrict it from performing the Services for the Company.",
+              "register_clause_quote": "neither it nor any of its Affiliates shall, during the Restricted Period, directly or indirectly, provide data analytics, artificial intelligence or revenue-management services to any Hospitality Business in the GCC.",
+              "explanation": "Because of the Al Noor non-compete, this warranty would be untrue when signed unless Al Noor's written waiver is obtained first. Signing it would expose AtliQ to a breach-of-warranty claim from Gulf Crown as well as a breach claim from Al Noor.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-030",
+              "severity": "possible conflict",
+              "incoming_clause_quote": "Cloud hosting within KSA region; availability target 99.5% monthly.",
+              "register_clause_quote": "during the Term Partner and its Affiliates shall not act as an implementation, reseller or referral partner for any Competing Platform in India or the GCC. … \"Competing Platform\" means any cloud data-warehouse, lakehouse or unified analytics platform offered as a service.",
+              "explanation": "The deal includes a \"Data platform and integrations\" milestone hosted in a KSA cloud region. If the platform is a cloud data-warehouse, lakehouse or unified analytics service other than CloudSpan's (for example Snowflake, Databricks, BigQuery or Fabric), building it could amount to acting as an implementation partner for a Competing Platform in the GCC. The CloudSpan exclusivity is live until 31 August 2028. The platform choice is not stated in this document, and the carve-outs in CloudSpan clause 7.3 are not on the register.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-004",
+              "severity": "possible conflict",
+              "incoming_clause_quote": "\"Contract Value\" means the total fees payable under this Agreement, being One Hundred and Forty Thousand United States Dollars (USD 140,000).",
+              "register_clause_quote": "Supplier represents and warrants that the rates, fees and other commercial terms offered to Crestline under this Agreement are and shall remain no less favorable than those offered by Supplier or its Affiliates to any other customer for substantially similar services during the Term.",
+              "explanation": "The Crestline promise binds AtliQ Inc's Affiliates, which includes the Pvt Ltd parent. It covers data engineering, BI and analytics services and runs until 31 July 2027. This is a fixed-fee data platform and analytics engagement. If the effective day rate, or other commercial terms such as liability caps or payment terms, is more favourable than Crestline's ($85/$62/$58 per hour), Crestline may claim retroactive credits. This cannot be assessed without an effort estimate.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            }
+          ],
+          "no_conflicts_statement": "Conflicts were found against the 49 commitments on the register (R-015, R-047 and the Clause 9.1(d) warranty); possible conflicts with R-030 and R-004.",
+          "clauses": [
+            {
+              "clause_ref": "Title / Preamble",
+              "type": "boilerplate",
+              "plain_english": "Names the agreement, gives its reference number and leaves the Effective Date blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Master Services Agreement (the \"Agreement\") is made and entered into on the ____ day of __________ 2026 (the \"Effective Date\").",
+              "reason": "The date is blank and will be filled in at signing. All milestone dates run from the Effective Date, so check the schedule is realistic from the actual signing date.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1. Parties",
+              "type": "parties / entity",
+              "plain_english": "Gulf Crown (a Saudi closed joint stock company) and AtliQ Technologies Pvt Ltd (Pune).",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "AtliQ Technologies Pvt Ltd, a private limited company incorporated under the laws of the Republic of India, bearing CIN U72900MH2019PTC321456",
+              "reason": "The rules engine confirms Pvt Ltd is the expected entity for a Saudi counterparty. The CIN and address match the finance fact sheet.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2. Recitals",
+              "type": "recitals / reliance",
+              "plain_english": "States that AtliQ has represented it has the expertise and that Gulf Crown is relying on those representations.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "the Company, relying upon the representations of the Service Provider, wishes to engage the Service Provider",
+              "reason": "Recording reliance on AtliQ's pre-contract representations could support a misrepresentation claim outside the contract terms. 15.5 (entire agreement) partly mitigates this. Whether it matters under Saudi law is a question for counsel.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3. Definitions",
+              "type": "definitions",
+              "plain_english": "Defines Platform, Properties, Deliverables, Milestone, Contract Value (USD 140,000), Business Day, Confidential Information and Guest Data.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "\"Guest Data\" means any personal data relating to guests, members of the Company's loyalty programme, or prospective guests of the Properties.",
+              "reason": "The definitions are standard. Note that the LD clause uses Contract Value, meaning the total fees, as its base. Guest Data is personal data (see Clause 13).",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1–4.2 Scope of Services",
+              "type": "scope",
+              "plain_english": "AtliQ builds a revenue management module, guest analytics, bilingual dashboards and integrations, and trains up to 40 staff, for nine Saudi hotels.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "The Service Provider shall design, develop, test, deploy and support a revenue management and guest analytics platform for the Company's nine (9) Properties located in the Kingdom of Saudi Arabia",
+              "reason": "This is revenue-management, analytics and AI work for a GCC Hospitality Business, which falls squarely within the live Al Noor non-compete (R-015, R-047). The Seaside consent (R-046) does not cover it. The scope is also broad (\"at a minimum\") and has not been checked against any AtliQ proposal.",
+              "past_positions": "Al Noor, Mar 2025: Bhavin said \"on §12 — we'll never do another hotel in the Gulf anyway.\" K narrowed the restriction from worldwide to \"GCC, term + 18 months\". Al Noor consent letter, Feb 2026, was obtained for Seaside Hotels only.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.3 Performance standard / instructions",
+              "type": "scope",
+              "plain_english": "AtliQ must follow Schedule 1, Schedule 3 and any reasonable instructions from the Company's Project Director.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "and any reasonable instructions issued by the Company's Project Director.",
+              "reason": "Instructions that are not routed through a change request could expand scope without extra fees. Consider tying instructions to Clause 4.5.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.4 Project manager",
+              "type": "staffing",
+              "plain_english": "A dedicated PM, available during Riyadh hours, who attends on-site at the Riyadh head office when reasonably requested.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "shall attend on-site at the Company's head office as reasonably requested.",
+              "reason": "Travel and visa costs are not addressed in the fees. Clarify who pays for on-site visits and how often they are expected.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.5 Change requests",
+              "type": "change control",
+              "plain_english": "Scope changes must be agreed in writing by both parties.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Any change to the scope of Services shall be agreed in writing through a change request signed by authorised representatives of both Parties.",
+              "reason": "This is mutual, written change control.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.1–5.2 Fees and invoicing",
+              "type": "payment",
+              "plain_english": "Fees are paid per Schedule 3. AtliQ invoices only after the Company's written acceptance of each milestone.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The Service Provider shall submit an invoice upon the Company's written acceptance of each Milestone.",
+              "reason": "There is no acceptance procedure, test period or deemed-acceptance mechanism. The client controls when AtliQ can invoice, and with it when termination payments become due (6.3).",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.3 Payment terms",
+              "type": "payment",
+              "plain_english": "The Company pays undisputed invoices within 60 days of receipt.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The Company shall pay each undisputed invoice within sixty (60) days from the date of receipt of a valid invoice.",
+              "reason": "The rules engine flags this: 60 days is above the checklist's \"30 days, 45 max\".",
+              "past_positions": "Trustline NBFC, Aug 2026: their 90 days was negotiated to 45. PixelCraft, Oct 2025 (AtliQ as buyer): 60 days changed to 30.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.4 Tax / withholding",
+              "type": "tax",
+              "plain_english": "Fees exclude VAT. The Company may withhold tax and provide a certificate; there is no gross-up.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Where the Company is required by law to withhold any tax from payments, the Company shall deduct such tax and provide the Service Provider with the relevant withholding certificate.",
+              "reason": "Without a gross-up, any withholding reduces what AtliQ actually receives. Finance should confirm the expected withholding and whether it is creditable in India.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.5–5.6 Disputes and currency",
+              "type": "payment",
+              "plain_english": "Invoices may be disputed within 15 Business Days. Payment is in USD to AtliQ's nominated account.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "All payments shall be made in United States Dollars by bank transfer to the account nominated by the Service Provider in writing.",
+              "reason": "USD is an invoicing currency for Pvt Ltd. The dispute window is time-limited.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.1 Term",
+              "type": "term",
+              "plain_english": "The agreement runs for 36 months from the Effective Date.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "shall continue for a period of thirty-six (36) months",
+              "reason": "The milestones finish at week 40, so the remaining term is presumably support. Note that the term would overlap the Al Noor restriction for its whole length.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.2 Termination for breach",
+              "type": "termination",
+              "plain_english": "Either party may terminate for an uncured material breach after 30 days' notice.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Either Party may terminate this Agreement by written notice if the other Party commits a material breach and fails to remedy such breach within thirty (30) days",
+              "reason": "Mutual, with a cure period.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.3 Termination for convenience",
+              "type": "termination",
+              "plain_english": "Only the Company may terminate for convenience, on 60 days' notice, and it pays only for services performed and accepted.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "the Company shall pay for all Services performed and accepted up to the date of termination.",
+              "reason": "The checklist says \"termination → they pay for work done\". Work in progress on an unaccepted milestone would be unpaid, yet 6.5 requires AtliQ to hand it over. The right is also one-sided: AtliQ has no convenience exit.",
+              "past_positions": "CloudSpan, Aug 2025: AtliQ asked for and got \"mutual 90-day termination for convenience\".",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.4 Insolvency",
+              "type": "termination",
+              "plain_english": "Either party may terminate immediately on the other's insolvency.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Either Party may terminate this Agreement immediately if the other Party becomes insolvent",
+              "reason": "Mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.5 Exit",
+              "type": "termination",
+              "plain_english": "On termination AtliQ hands over all Deliverables and work in progress and gives up to 60 days of transition help.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "the Service Provider shall deliver to the Company all Deliverables and work in progress, and shall provide reasonable transition assistance for a period of up to sixty (60) days.",
+              "reason": "The handover is not conditioned on payment, and transition assistance is not stated to be paid. This also sits awkwardly with 8.1, under which ownership passes only on payment in full.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7. Confidentiality",
+              "type": "confidentiality",
+              "plain_english": "Mutual confidentiality, with disclosure allowed to employees, advisers and subcontractors who need to know. It survives 5 years.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Each Party shall keep confidential all Confidential Information of the other Party",
+              "reason": "Mutual, which matches the checklist (\"mutual, fine usually\"). Note that a breach of this clause is uncapped under 10.2.",
+              "past_positions": "GlobalMart, Mar 2026: \"We only sign mutual.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.1–8.3 Intellectual property",
+              "type": "IP",
+              "plain_english": "The Company owns bespoke Deliverables once paid in full. AtliQ keeps its Background IP and licenses it for the Company's internal use. The Company keeps its data.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "All Deliverables specifically created for the Company under this Agreement shall, upon payment in full, become the property of the Company.",
+              "reason": "This matches the checklist (\"client owns what we build for them, we keep our own stuff\") and AtliQ's usual position (R-003, R-012, R-020). Check that no freelancer-owned components are used: R-023 shows Rohan Iyer kept ownership of his Work Product.",
+              "past_positions": "Northwind, Jun 2025: PipeKit pre-existing tools were assigned to the client (R-026), after K \"skimmed the IP\". This draft avoids that.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.1(a)–(c) Warranties",
+              "type": "warranty",
+              "plain_english": "Reasonable skill and care, 90-day conformity warranty, and authority to contract.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "the Deliverables shall conform in all material respects to the specifications in Schedule 1 for a period of ninety (90) days following acceptance",
+              "reason": "Standard and time-limited.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.1(d) No conflicting restriction warranty",
+              "type": "warranty",
+              "plain_english": "AtliQ warrants that no other agreement stops or restricts it from doing this work.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "it is not bound by any agreement or restriction which would prevent or restrict it from performing the Services for the Company.",
+              "reason": "This would be untrue because of the live Al Noor non-compete (R-015, R-047). It may also be untrue because of the CloudSpan exclusivity (R-030), depending on the platform. Do not sign until the restrictions are resolved.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.2 Defect remedy",
+              "type": "warranty",
+              "plain_english": "AtliQ fixes defects notified during the warranty period at its own cost.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Service Provider shall, at its own cost, remedy any defect notified by the Company during the warranty period.",
+              "reason": "Standard.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.1 Exclusion of indirect loss",
+              "type": "liability",
+              "plain_english": "Neither side is liable for indirect or consequential loss or loss of profits.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party shall be liable to the other for any indirect, special or consequential loss, or loss of profits",
+              "reason": "Mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.2 Liability cap",
+              "type": "liability",
+              "plain_english": "Each side's liability is capped at the Contract Value, except fraud, wilful misconduct and breaches of confidentiality or data protection, which are uncapped.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "Save in respect of liability arising from fraud, wilful misconduct, breach of Clause 7 (Confidentiality) or Clause 13 (Data Protection), each Party's aggregate liability under this Agreement shall not exceed the Contract Value.",
+              "reason": "A 1x cap matches the checklist. However, liability for confidentiality and data-protection breaches is unlimited, on a deal handling hotel guest and loyalty personal data. That is the likeliest serious claim, so the exposure is effectively unlimited. Checklist: \"liability → 1x fees. NOT unlimited.\" Consider a separate, higher cap (a multiple of fees) for data breaches.",
+              "past_positions": "Kessler Mobility, Jan 2026: K said \"Unlimited liability on a €120k deal means one bad incident … and the company is gone\" and offered 1x fees with carve-outs; the deal was lost. PayTrack, Jan 2025: \"Liability cap stays 1x fees.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11. Indemnity",
+              "type": "indemnity",
+              "plain_english": "AtliQ indemnifies for third-party IP infringement by the Deliverables. The Company indemnifies for claims arising from the materials it supplies.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "The Service Provider shall indemnify the Company against all losses, claims and expenses arising from any claim by a third party that the Deliverables infringe the intellectual property rights of such third party.",
+              "reason": "Broadly reciprocal, and AtliQ does not cover the client's own negligence. The indemnity is not carved out of the 10.2 cap, so it appears capped. Because 11.1 covers \"the Deliverables\" without excluding Company-supplied materials, a human should confirm this reading.",
+              "past_positions": "PayTrack, Jan 2025: AtliQ rejected an indemnity covering the client's negligence and agreed a mutual indemnity instead.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.1 Time of the essence",
+              "type": "delay",
+              "plain_english": "Milestone dates are strict.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Time shall be of the essence in respect of the Milestone dates set out in Schedule 3.",
+              "reason": "This may let the client treat any milestone slip as a serious breach giving a right to terminate, on top of the LDs. Its effect under Saudi law needs counsel.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.2–12.3 Liquidated damages",
+              "type": "liquidated damages",
+              "plain_english": "LDs of 1% of the total Contract Value per week of delay on any milestone, capped at 10% of the Contract Value (USD 14,000).",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "an amount equal to one percent (1%) of the Contract Value for each week or part thereof of delay.",
+              "reason": "The LDs are capped (\"shall not exceed ten percent (10%) of the Contract Value\"), so this is not open-ended. But they are calculated on total fees rather than the delayed milestone. There is also no exclusion for delays caused by the Company; only Force Majeure is excluded (12.5). This draft mirrors the Al Noor exception.",
+              "past_positions": "Acme (Mar 2025), Northwind (Jun 2025) and Trustline (Aug 2026): each settled at \"0.5% of milestone fee per week, cap 5% of milestone, client delays excluded\". Al Noor, Mar 2025: K said \"Approving 10% of total fees as a strategic exception for Al Noor only — not our new standard\", and the weekly 1% was still calculated on the milestone.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.4 Set-off of LDs",
+              "type": "liquidated damages",
+              "plain_english": "The Company may deduct LDs from any payment due.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "The Company may deduct any liquidated damages due from any amount payable to the Service Provider under this Agreement.",
+              "reason": "Unilateral set-off, with no requirement that the LDs be agreed or undisputed first.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.5 Force majeure relief for delay",
+              "type": "liquidated damages",
+              "plain_english": "No LDs for delay caused by Force Majeure.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Service Provider shall not be liable for delay to the extent such delay is caused by a Force Majeure Event",
+              "reason": "Helpful, but it does not cover client-caused delay (see 12.2).",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.1 PDPL compliance",
+              "type": "data protection",
+              "plain_english": "AtliQ processes Guest Data only on the Company's instructions and in compliance with the KSA PDPL.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "in compliance with the Personal Data Protection Law issued by Royal Decree No. M/19 and its Implementing Regulations",
+              "reason": "This is a regulated data type, and the rules engine flags KSA PDPL. AtliQ's obligations under it need confirming with counsel. A breach is uncapped under 10.2.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.2 Data residency",
+              "type": "data protection",
+              "plain_english": "Guest Data must be hosted in KSA unless the Company approves a transfer in writing.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "Guest Data shall be hosted within the Kingdom of Saudi Arabia unless the Company provides prior written approval for any transfer outside the Kingdom.",
+              "reason": "The delivery team sits in Pune. The clause does not say whether remote access from India counts as a transfer; clarify this and get the approval in writing. A comparable pattern is Al Noor R-018, which allows remote access only into UAE-hosted environments. Separately, R-048 requires ring-fencing staff who accessed Al Noor data from Seaside data. It does not mention Gulf Crown, but Al Noor confidential information must not be used here.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.3 Security and breach notice",
+              "type": "data protection",
+              "plain_english": "AtliQ must apply appropriate security measures and notify breaches within 72 hours.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "shall notify the Company of any personal data breach within seventy-two (72) hours of becoming aware of it.",
+              "reason": "72 hours is longer than other AtliQ commitments (24h, 48h, 6h), so it is operationally achievable.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.1 Governing law",
+              "type": "governing law",
+              "plain_english": "Saudi law governs.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "This Agreement shall be governed by and construed in accordance with the laws and regulations in force in the Kingdom of Saudi Arabia.",
+              "reason": "The rules engine flags this: it is the counterparty's law and AtliQ has no presence in KSA. It is acceptable only as a deliberate trade, given the cost of enforcing or defending abroad. Checklist: \"gov law → ours (India for Pvt Ltd)\".",
+              "past_positions": "Al Noor, Mar 2025: accepted DIFC law and courts. Northwind, Jun 2025: K said \"English law / LCIA — not worth losing the deal over.\" Acme: Indian law, Mumbai arbitration.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.2–14.3 Dispute resolution",
+              "type": "dispute resolution",
+              "plain_english": "30 days of senior-executive negotiation, then exclusive jurisdiction of the Riyadh courts.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "the dispute shall be referred to the competent courts in the City of Riyadh, Kingdom of Saudi Arabia, which shall have exclusive jurisdiction.",
+              "reason": "Litigation would be in a foreign court, likely in Arabic, rather than neutral arbitration. Consider proposing arbitration at a neutral seat.",
+              "past_positions": "CloudSpan: Singapore law / SIAC accepted. Northwind: LCIA.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.1 Force majeure",
+              "type": "boilerplate",
+              "plain_english": "Neither party is liable for failures caused by events beyond its control.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party shall be liable for failure to perform its obligations where such failure results from events beyond its reasonable control",
+              "reason": "Mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.2 Assignment / subcontracting",
+              "type": "boilerplate",
+              "plain_english": "AtliQ cannot assign or subcontract without the Company's consent; the Company is not restricted.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "The Service Provider shall not assign or subcontract any of its obligations without the prior written consent of the Company.",
+              "reason": "This is one-sided. It is workable if delivery stays in-house at Pvt Ltd, but any freelancer (for example for Arabic UI work) would need consent.",
+              "past_positions": "Similar restrictions were accepted with Al Noor (R-017), Northwind (R-028), Brightwater (R-044) and Trustline (R-054; mutual).",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.3 Language",
+              "type": "boilerplate",
+              "plain_english": "The agreement is in English and Arabic, and the Arabic text prevails.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "In the event of any inconsistency, the Arabic text shall prevail.",
+              "reason": "No Arabic version has been provided. The binding text could differ from the English one reviewed here. Obtain an independent translation check before signing.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.4 Notices",
+              "type": "boilerplate",
+              "plain_english": "Notices go by hand, courier or email to the Clause 1 addresses, for the attention of the Gulf Crown CTO and the AtliQ CEO.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "marked for the attention of the Company's Chief Technology Officer (Mr. Faisal Al-Otaibi) and the Service Provider's Chief Executive Officer respectively.",
+              "reason": "Standard. No email addresses are specified.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.5 Entire agreement",
+              "type": "boilerplate",
+              "plain_english": "This agreement and its Schedules replace all prior negotiations.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement, together with its Schedules, constitutes the entire agreement between the Parties and supersedes all prior negotiations and understandings.",
+              "reason": "Standard. Any proposal commitments not written in here would be lost.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15.6–15.7 Amendment / counterparts",
+              "type": "boilerplate",
+              "plain_english": "Amendments must be in writing and signed by both parties; the agreement can be signed in counterparts.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "No amendment shall be effective unless in writing and signed by both Parties.",
+              "reason": "Standard and mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Schedule 1 — Specifications",
+              "type": "specification",
+              "plain_english": "Cloud hosting in a KSA region, 99.5% availability, models refreshed daily, rates published by 07:00, AD-based access control, bilingual interface.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Cloud hosting within KSA region; availability target 99.5% monthly.",
+              "reason": "This is a summary only. It does not say who owns or pays for hosting, or which platform is used (relevant to the CloudSpan exclusivity, R-030). A 99.5% availability target on client-hosted infrastructure may be outside AtliQ's control.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Schedule 2 — Properties",
+              "type": "schedule",
+              "plain_english": "Nine hotels across Riyadh, Jeddah, Dammam, Al Khobar, AlUla, Abha and Madinah.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Gulf Crown Riyadh Olaya | Riyadh | 312",
+              "reason": "Factual list. It confirms the client is a GCC hotel operator, which is relevant to R-015.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Schedule 3 — Milestones and payment",
+              "type": "schedule",
+              "plain_english": "Five milestones over 40 weeks, totalling USD 140,000.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "M3 | Revenue Management Module live at all Properties | Effective Date + 26 weeks | 42,000",
+              "reason": "Live at all nine properties depends on the client's PMS and channel-manager integrations, and there is no relief for client-caused delay. Check the timeline and rates against AtliQ's proposal.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Execution",
+              "type": "signature",
+              "plain_english": "Signature blocks; AtliQ's signatory is blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "For and on behalf of AtliQ Technologies Pvt Ltd",
+              "reason": "The finance sheet names Karandeep (CEO) as the authorised signatory.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            }
+          ],
+          "mutuality": {
+            "applies": false,
+            "one_sided_clauses": []
+          },
+          "suggested_next_step": "escalate",
+          "next_step_reason": "Three separate grounds. First, register conflicts: the live Al Noor GCC hospitality non-compete (R-015, reaffirmed in R-047) bars this exact work, and the 9.1(d) warranty would be untrue. Second, a regulated data type: guest personal data under KSA PDPL with KSA residency. Third, uncapped liability for confidentiality and data-protection breaches on a USD 140,000 deal. Possible conflicts with CloudSpan (R-030) and Crestline (R-004) also need checking. This is a suggestion only; the human decides.",
+          "clauses_to_push_on": [
+            "Resolve the Al Noor non-compete first: obtain Al Noor's written waiver under its clause 12.4 for Gulf Crown, or do not proceed",
+            "9.1(d): do not give the no-restriction warranty unless the restrictions are cleared",
+            "10.2: cap liability for confidentiality and data-protection breaches instead of leaving it unlimited",
+            "12.2–12.4: LDs on the delayed milestone fee, not total Contract Value; exclude client-caused delay; restrict set-off to agreed amounts",
+            "5.3: payment at 30–45 days instead of 60",
+            "6.3/6.5: payment for work performed including work in progress; paid transition assistance; handover conditioned on payment",
+            "5.2: add an acceptance procedure with deemed acceptance",
+            "13.2: clarify that remote access from India is permitted, or obtain written approval",
+            "14: consider neutral arbitration instead of exclusive Riyadh courts",
+            "15.3: obtain and verify the Arabic text, or make English prevail",
+            "4.4: who pays for on-site travel",
+            "5.4: tax gross-up or pricing adjusted for withholding"
+          ],
+          "not_checked": [
+            "Al Noor MSA full text and current status (term, any early termination) and whether any waiver for Gulf Crown exists",
+            "Al Noor consent letter ANHG/LGL/2026/031: its location is unknown according to Jay's notes",
+            "CloudSpan agreement carve-outs (clause 7.3) and which cloud platform this project would use",
+            "Crestline rate comparison: effective day rate of this fixed-fee deal versus the Crestline rate card",
+            "Arabic version of the agreement (it prevails under 15.3)",
+            "Full Schedule 1 specifications (only a summary is provided)",
+            "AtliQ's proposal: whether scope, milestones and pricing match",
+            "NDA with Gulf Crown and any SOW (flagged as not evidenced by the rules engine)",
+            "KSA PDPL obligations, cross-border transfer rules and withholding tax treatment, for counsel and finance",
+            "Insurance coverage for uncapped data-breach liability",
+            "Bhavin's emails and any calls with Gulf Crown about this draft",
+            "Whether any personnel who accessed Al Noor data would work on this project"
+          ],
+          "output_filter_hits": 0,
+          "unverified_quotes": 0
+        },
+        "usage": {
+          "input_tokens": 32649,
+          "output_tokens": 14906,
+          "usd": 0.4287
+        },
+        "elapsed_ms": 125006
+      }
+    },
+    {
+      "id": "2026-09-19_lakeshore_grocers_msa_draft",
+      "scenario": "Pricing promise: senior rate below the Crestline MFN rate card",
+      "pass": true,
+      "result": {
+        "id": "2026-09-19_lakeshore_grocers_msa_draft",
+        "title": "MASTER SERVICES AGREEMENT",
+        "facts": {
+          "document_type": "MSA",
+          "parties": [
+            "Lakeshore Grocers Inc.",
+            "AtliQ Inc"
+          ],
+          "atliq_entity_named": "AtliQ Inc",
+          "counterparty": "Lakeshore Grocers Inc.",
+          "counterparty_country": "USA",
+          "governing_law": "State of Illinois",
+          "courts_or_arbitration": "SIAC arbitration, seated in Singapore, one arbitrator, English language (after 30-day executive negotiation); interim injunctive relief from any competent court",
+          "currency": "USD",
+          "value_usd_estimate": 64000,
+          "data_types": [
+            "other personal data",
+            "financial data"
+          ],
+          "documents_referenced": [
+            "Exhibit A - Rate Card",
+            "Exhibit B - SOW-1: Retail Analytics Modernization",
+            "Exhibit C - Information Security Requirements (Lakeshore standard vendor security schedule v3.2)",
+            "Statements of Work",
+            "Change orders",
+            "Lakeshore travel policy",
+            "Illinois Personal Information Protection Act",
+            "SIAC Arbitration Rules"
+          ],
+          "is_atliq_paper": false,
+          "is_labelled_mutual": false,
+          "cyber_insurance_required_usd": null,
+          "payment_days": 30,
+          "deal_category": "client services"
+        },
+        "rules": {
+          "region": "United States",
+          "expected_entity": "AtliQ Inc",
+          "findings": [
+            {
+              "check": "entity",
+              "status": "ok",
+              "text": "AtliQ Inc is the expected entity for a USA counterparty."
+            },
+            {
+              "check": "governing law",
+              "status": "ok",
+              "text": "Governing law (State of Illinois) matches the signing entity's home jurisdiction."
+            },
+            {
+              "check": "regulated data",
+              "status": "attention",
+              "text": "financial data: Financial customer data in India: check the client's regulator requirements (RBI outsourcing rules for banks and NBFCs) and India's DPDP Act. Confirm with counsel."
+            },
+            {
+              "check": "paperwork",
+              "status": "ok",
+              "text": "Documents expected for a \"client services\" deal appear to be referenced."
+            }
+          ]
+        },
+        "review": {
+          "summary": "Lakeshore Grocers Inc. (Illinois, USA) MSA on Lakeshore's paper, naming AtliQ Inc, for data engineering and BI work: lakehouse migration, pipelines, semantic layer and Power BI. SOW-1 is USD 64,000. Delay damages, payment terms, IP and non-solicit are close to positions AtliQ has taken before. The main finding is a register conflict: the Exhibit A rates ($72 / $55 / $50 per hour, fixed for 24 months) are below the rates in the Crestline Retail MSA ($85 / $62 / $58). Crestline's live pricing promise (R-004, until 31 July 2027) applies to 'substantially similar services' by AtliQ Inc or its affiliates. There is also a possible IP conflict if AtliQ's PipeKit accelerator, already assigned to Northwind (R-026), is reused here as a 'Vendor Tool'. Other points for review: uncapped liability for confidentiality, indemnity and gross negligence claims (9.2); SIAC arbitration in Singapore for a US entity under Illinois law (13.3); Exhibit C security schedule not attached; and the rules engine's financial-data flag.",
+          "register_conflicts": [
+            {
+              "register_id": "R-004",
+              "severity": "conflict",
+              "incoming_clause_quote": "Time-and-materials work, change orders and any additional SOWs shall be charged at the rates set out in the Rate Card, which shall remain fixed for the first twenty-four (24) months of this Agreement. | Senior Data Engineer | $72 | Data Engineer | $55 | BI Developer | $50 |",
+              "register_clause_quote": "Supplier represents and warrants that the rates, fees and other commercial terms offered to Crestline under this Agreement are and shall remain no less favorable than those offered by Supplier or its Affiliates to any other customer for substantially similar services during the Term.",
+              "explanation": "The Crestline MSA (AtliQ Inc, live until 31 July 2027) covers data engineering, BI and analytics services. Jay's history records the Crestline rate card as Sr Data Engineer $85/hr, Data Engineer $62/hr and BI Developer $58/hr. Lakeshore's rates are lower in every role, for substantially similar services, and fixed for 24 months. Under the register entry this could trigger retroactive credits to Crestline and an audit right. Dhaval's 2024 comment 'We never discount, so it's harmless' would no longer hold. A human needs to decide whether to raise the Lakeshore rates, accept the Crestline exposure, or get advice on whether the services are 'substantially similar'.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-026",
+              "severity": "possible conflict",
+              "incoming_clause_quote": "Vendor retains all rights in its pre-existing tools, code libraries and methodologies (\"Vendor Tools\"). Vendor grants Lakeshore a perpetual, non-exclusive, royalty-free license to use any Vendor Tools incorporated in the Deliverables for Lakeshore's internal business purposes.",
+              "register_clause_quote": "All Intellectual Property Rights in the Deliverables, including any software, tools, frameworks, libraries and pre-existing materials incorporated into the Deliverables, shall vest in the Client absolutely upon payment of the Charges for the relevant Milestone.",
+              "explanation": "Under the Northwind SOW-1, AtliQ's PipeKit accelerator vested in Northwind. If PipeKit, or anything derived from it, is used for Lakeshore's ingestion pipelines, AtliQ may no longer own it and so may not be able to license it as a 'Vendor Tool'. The contract does not say which tools will be used. Delivery needs to confirm. A similar question arises if work product from freelancer Rohan Iyer is reused: under R-023 he keeps ownership and AtliQ holds only a non-exclusive licence.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            }
+          ],
+          "no_conflicts_statement": "Conflicts were found (see register_conflicts). The deal was checked against the 49 commitments on the register. R-001 and R-002 (Orbit Travels) have expired and are not relevant. R-030 (CloudSpan exclusivity) covers India and the GCC only, so a US lakehouse engagement falls outside it.",
+          "clauses": [
+            {
+              "clause_ref": "Preamble / Parties",
+              "type": "Parties",
+              "plain_english": "Contract between Lakeshore Grocers Inc. (Illinois) and AtliQ Inc (Delaware). The effective date is blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "**AtliQ Inc**, a Delaware corporation having its principal office at 101 College Road East, Suite 210, Princeton, New Jersey 08540 (\"**Vendor**\")",
+              "reason": "The rules engine confirms AtliQ Inc is the correct entity for a US counterparty, and the address matches the finance fact sheet. The effective date must be filled in before signing.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.1",
+              "type": "Background",
+              "plain_english": "Lakeshore runs 58 grocery stores in IL, WI and IN and is owned by a Singapore parent company.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "is a wholly owned subsidiary of Lakeshore Holdings Pte Ltd, a company incorporated in Singapore (\"**Parent**\")",
+              "reason": "Factual background. The Singapore parent explains the SIAC forum (13.3) and the assignment right (14.3).",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.2",
+              "type": "Background",
+              "plain_english": "Lakeshore selects AtliQ for data engineering and BI services.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "has selected Vendor to provide data engineering and business intelligence services under this Agreement",
+              "reason": "This description of the services is what makes them comparable to the Crestline services for the R-004 pricing promise.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2.1-2.4, 2.6",
+              "type": "Definitions",
+              "plain_english": "Defines SOW, Services, Deliverables, Milestone Fee and Rate Card.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "\"**Milestone Fee**\" means the portion of the Fees allocated to a milestone in an SOW.",
+              "reason": "Standard definitions. 'Milestone Fee' is what limits delay damages to the affected milestone in clause 11.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2.5",
+              "type": "Definitions (data)",
+              "plain_english": "Lakeshore Data includes point-of-sale, loyalty, inventory and supplier data.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "\"**Lakeshore Data**\" means all data provided by or on behalf of Lakeshore, including point-of-sale, loyalty, inventory and supplier data.",
+              "reason": "Loyalty and point-of-sale data are likely to include personal and payment-related data. The rules engine flags financial data for checking with counsel. Its note refers to Indian rules (RBI, DPDP), which is relevant because delivery is offshore from Pune.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.1",
+              "type": "Scope",
+              "plain_english": "SOW-1 covers a lakehouse migration, ingestion pipelines, a semantic layer and Power BI dashboards.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "migration of Lakeshore's legacy on-premises SQL Server data warehouse to a cloud lakehouse",
+              "reason": "The CloudSpan exclusivity (R-030) restricts AtliQ acting as an implementation partner for competing lakehouse platforms in India and the GCC only. This client is in the US, which is outside that restriction. The platform is not named, so delivery should confirm. Whether the scope matches AtliQ's proposal could not be checked.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.2",
+              "type": "Staffing / offshore",
+              "plain_english": "Offshore staff are allowed if personal data is accessed only through Lakeshore-approved secure environments.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Vendor may use offshore delivery personnel provided that Lakeshore Data containing personal information is accessed only through Lakeshore-approved secure environments.",
+              "reason": "This allows AtliQ Inc's normal arrangement of subcontracting delivery to the Pune team. Unlike Crestline (R-005) and Brightwater (R-045), it does not ban offshore access.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.3",
+              "type": "Client obligations",
+              "plain_english": "Lakeshore must provide timely access to systems, data and experts, and name a project sponsor.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Lakeshore shall provide timely access to systems, data and subject-matter experts",
+              "reason": "Helpful to AtliQ, and links to the exclusion of client-caused delays in clause 11.2.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.4",
+              "type": "Change control",
+              "plain_english": "Changes require a signed change order and are charged at the Rate Card.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "Additional work under a change order shall be charged at the Rate Card unless otherwise agreed.",
+              "reason": "Change orders are priced at the Exhibit A rates, which are below the Crestline rates (see R-004).",
+              "past_positions": "Crestline Retail (Jul 2024): MFN accepted as drafted; rate card Sr Data Engineer $85/hr, Data Engineer $62/hr, BI Developer $58/hr.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1",
+              "type": "Fees",
+              "plain_english": "SOW-1 is USD 64,000, paid by milestone.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Fees for SOW-1 total USD 64,000, payable by milestone as set out in Exhibit B.",
+              "reason": "This works out to about $61/hr blended over the estimated 1,050 hours. Whether it matches the proposal could not be checked.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.2",
+              "type": "Pricing / rate lock",
+              "plain_english": "Rates are fixed for 24 months for T&M work, change orders and future SOWs.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "charged at the rates set out in the Rate Card, which shall remain fixed for the first twenty-four (24) months of this Agreement.",
+              "reason": "Rates lower than Crestline's, locked for 24 months, would breach Crestline's pricing promise (R-004, live until 31 July 2027).",
+              "past_positions": "Crestline Retail (Jul 2024): Dhaval: \"We never discount, so it's harmless — fine.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.3",
+              "type": "Payment",
+              "plain_english": "AtliQ invoices on each milestone; Lakeshore pays within 30 days.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Lakeshore shall pay undisputed amounts within thirty (30) days of receipt of invoice.",
+              "reason": "Within the checklist's '30 days, 45 max'. There is no deadline for raising disputes, which is a minor point.",
+              "past_positions": "Trustline NBFC (Aug 2026): AtliQ countered 90 days with 45 days.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.4",
+              "type": "Expenses",
+              "plain_english": "Pre-approved travel is reimbursed at cost under Lakeshore's travel policy.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "Pre-approved travel expenses shall be reimbursed at cost in accordance with Lakeshore's travel policy.",
+              "reason": "The travel policy itself was not provided.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.5",
+              "type": "Taxes",
+              "plain_english": "Lakeshore pays sales and use taxes, except taxes on AtliQ's income.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Fees are exclusive of applicable sales and use taxes",
+              "reason": "Standard wording.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.1",
+              "type": "Term / renewal",
+              "plain_english": "Two-year term that renews automatically each year unless either side gives 60 days' notice.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "continues for two (2) years, renewing automatically for successive one-year periods unless either party gives sixty (60) days' notice of non-renewal.",
+              "reason": "Mutual. The renewal deadline should be diarised.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.2",
+              "type": "Termination for breach",
+              "plain_english": "Either side may terminate for an uncured material breach after 30 days' notice.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Either party may terminate this Agreement or any SOW for material breach not cured within thirty (30) days after written notice.",
+              "reason": "Mutual.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.3",
+              "type": "Termination for convenience",
+              "plain_english": "Lakeshore can cancel an SOW on 30 days' notice and pays for work done.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Lakeshore may terminate any SOW for convenience on thirty (30) days' written notice, and shall pay Vendor for all Services performed through the effective date of termination.",
+              "reason": "Meets the checklist point 'they pay for work done'. Only Lakeshore has this right; a human can decide whether to ask for it to be mutual.",
+              "past_positions": "CloudSpan (Aug 2025): AtliQ asked for and got mutual 90-day termination for convenience.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.4",
+              "type": "Survival of SOWs",
+              "plain_english": "SOWs in progress continue even if the MSA ends.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Termination of this Agreement shall not affect any SOW then in effect",
+              "reason": "Standard wording.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.1-6.3",
+              "type": "Confidentiality",
+              "plain_english": "Mutual confidentiality, with sharing allowed to employees, contractors and advisers. Survives 3 years, and indefinitely for trade secrets.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "not disclose it except to employees, contractors and advisers with a need to know who are bound by similar obligations.",
+              "reason": "Mutual. Allowing disclosure to contractors permits the intercompany delivery arrangement. Breach is uncapped under 9.2 (see that clause).",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.1",
+              "type": "IP – deliverables",
+              "plain_english": "Lakeshore owns the bespoke deliverables once paid in full.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Upon payment in full, Lakeshore shall own the Deliverables created specifically for Lakeshore under an SOW.",
+              "reason": "Matches the checklist point 'client owns what we build for them'.",
+              "past_positions": "PayTrack, Acme, Trustline: similar vesting on full payment.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.2",
+              "type": "IP – pre-existing tools",
+              "plain_english": "AtliQ keeps its own tools and gives Lakeshore a perpetual internal-use licence.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Vendor retains all rights in its pre-existing tools, code libraries and methodologies (\"Vendor Tools\").",
+              "reason": "The wording is acceptable. However, PipeKit was assigned to Northwind (R-026), and Rohan Iyer kept ownership of his work product (R-023). Either would be a problem if reused here as a Vendor Tool. Delivery needs to confirm which tools will be used.",
+              "past_positions": "Northwind (Jun 2025): K: \"I skimmed the IP and boilerplate\"; SOW-1 uses PipeKit. Rohan Iyer (Apr 2025): Dhaval agreed he keeps IP in the Work Product.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.3",
+              "type": "IP – client data",
+              "plain_english": "Lakeshore keeps all rights in its data.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Lakeshore retains all rights in Lakeshore Data.",
+              "reason": "Standard wording.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.1-8.2",
+              "type": "Warranties",
+              "plain_english": "Workmanlike services; deliverables conform to the SOW for 90 days, with free re-performance.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Vendor warrants that the Deliverables will materially conform to the applicable SOW for ninety (90) days after acceptance and will re-perform non-conforming Services at no charge.",
+              "reason": "Normal market terms.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.3",
+              "type": "Disclaimer",
+              "plain_english": "No implied warranties.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "VENDOR DISCLAIMS ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.",
+              "reason": "Favourable to AtliQ.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.1",
+              "type": "Liability exclusion",
+              "plain_english": "Neither side is liable for indirect or consequential losses or lost profits.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "NEITHER PARTY SHALL BE LIABLE FOR INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES, OR LOST PROFITS.",
+              "reason": "Mutual. Note that the carve-outs in 9.2 may not override this exclusion; it is unclear.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.2",
+              "type": "Liability cap",
+              "plain_english": "Liability is capped at the SOW fees from the last 12 months. There is no cap for breach of confidentiality, indemnities, gross negligence or wilful misconduct.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "EXCEPT FOR BREACH OF CONFIDENTIALITY, INDEMNIFICATION OBLIGATIONS, OR GROSS NEGLIGENCE OR WILLFUL MISCONDUCT.",
+              "reason": "The main cap is roughly 1x fees, in line with the checklist. However, confidentiality breach is uncapped, and a data incident involving loyalty or point-of-sale data could fall under it. The IP indemnity in 10.1 is also uncapped. A '12 months preceding the claim' cap may be less than the full $64k early in the project. The deal is under USD 100k, so this alone does not trigger escalation; a human should decide whether to ask for a super-cap (for example 2–3x fees) on the carve-outs.",
+              "past_positions": "Kessler Mobility (Jan 2026): K refused unlimited liability: \"Unlimited liability on a €120k deal means one bad incident … and the company is gone.\" Offered 1x fees with carve-outs. PayTrack (Jan 2025): \"Liability cap stays 1x fees.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.1",
+              "type": "Indemnity – IP",
+              "plain_english": "AtliQ defends Lakeshore against US IP infringement claims about the deliverables.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "Vendor shall defend and indemnify Lakeshore against third-party claims alleging that the Deliverables infringe a U.S. patent, copyright or trademark or misappropriate a trade secret.",
+              "reason": "A one-way IP indemnity is normal for a supplier and covers only AtliQ's own work. It is uncapped through 9.2, and there is no exclusion for Lakeshore-supplied materials or modifications; consider asking for one. Reusing third-party or Rohan Iyer materials would increase this exposure.",
+              "past_positions": "PayTrack (Jan 2025): K: \"we can't insure against PayTrack's own negligence\"; agreed mutual indemnity.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.2",
+              "type": "Indemnity – injury/property",
+              "plain_english": "Each side covers injury or property damage it causes.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Each party shall indemnify the other against third-party claims for bodily injury or property damage to the extent caused by its negligence or willful misconduct.",
+              "reason": "Mutual and fault-based, consistent with 'we don't cover their mistakes'.",
+              "past_positions": "PayTrack (Jan 2025): mutual indemnity agreed.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.1",
+              "type": "Liquidated damages",
+              "plain_english": "Delay damages of 0.5% of the affected milestone fee per week, capped at 5% of that milestone.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "one-half percent (0.5%) of the affected Milestone Fee per week of delay, up to a maximum of five percent (5%) of that Milestone Fee.",
+              "reason": "Capped, and matches the counter-position AtliQ has secured before.",
+              "past_positions": "Acme (Mar 2025), Northwind (Jun 2025), Trustline (Aug 2026): K countered with exactly 0.5% of milestone per week, capped at 5% of milestone.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.2",
+              "type": "Liquidated damages exclusions",
+              "plain_english": "No delay damages for delays caused by Lakeshore, its vendors or force majeure.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Liquidated damages shall not apply to any delay caused by Lakeshore, its third-party vendors or a force majeure event.",
+              "reason": "Matches AtliQ's past positions. Note the contract has no general force majeure clause.",
+              "past_positions": "Acme (Mar 2025): \"no LD for delays caused by client\".",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.1",
+              "type": "Data security",
+              "plain_english": "AtliQ must follow Lakeshore's security schedule (Exhibit C) and privacy laws, including Illinois PIPA.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Vendor shall comply with Lakeshore's Information Security Requirements (Exhibit C) and applicable privacy laws, including the Illinois Personal Information Protection Act.",
+              "reason": "Exhibit C is 'attached separately' and has not been reviewed. It may contain offshore restrictions, audit rights or insurance terms that cut across clause 3.2. The rules engine flags financial data and says to confirm with counsel.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.2",
+              "type": "Breach notification",
+              "plain_english": "AtliQ must notify Lakeshore within 72 hours of discovering unauthorised access.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Vendor shall notify Lakeshore within seventy-two (72) hours of discovering any unauthorized access to Lakeshore Data.",
+              "reason": "Longer than the 24h and 6h windows in other AtliQ contracts, so operationally manageable.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.3",
+              "type": "Data return",
+              "plain_english": "AtliQ returns or deletes data when the services are complete.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Upon completion of the Services, Vendor shall return or securely delete Lakeshore Data.",
+              "reason": "Standard wording.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.1",
+              "type": "Governing law",
+              "plain_english": "Illinois law applies.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement shall be governed by the laws of the State of Illinois, without regard to its conflict of laws rules.",
+              "reason": "The rules engine reports this as OK for AtliQ Inc, and US law is in line with the checklist.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.2",
+              "type": "Escalation",
+              "plain_english": "30 days of senior-executive negotiation comes first.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The parties shall first attempt to resolve any dispute through good-faith negotiation between senior executives for thirty (30) days.",
+              "reason": "Mutual.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.3",
+              "type": "Arbitration",
+              "plain_english": "Disputes go to SIAC arbitration in Singapore before one arbitrator.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The seat of arbitration shall be Singapore. The tribunal shall consist of one arbitrator.",
+              "reason": "Both parties are US companies and the law is Illinois, yet disputes go to Singapore to suit the client's parent group. Arbitration costs could be large compared with a $64k deal. Consider asking for AAA or JAMS arbitration in a US city, or US courts.",
+              "past_positions": "CloudSpan (Aug 2025): Singapore law / SIAC ok. Al Noor (Mar 2025): DIFC accepted as \"group standard\". Northwind (Jun 2025): K: \"English law / LCIA — not worth losing the deal over.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13.4",
+              "type": "Injunctive relief",
+              "plain_english": "Either side may seek urgent court orders.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Nothing in this Section prevents either party from seeking interim injunctive relief from a court of competent jurisdiction.",
+              "reason": "Mutual.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.1",
+              "type": "Independent contractor",
+              "plain_english": "AtliQ is an independent contractor.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Vendor is an independent contractor and is solely responsible for its personnel.",
+              "reason": "Standard. There is no ban on subcontracting, so delivery through Pvt Ltd is not restricted.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.2",
+              "type": "Non-solicitation",
+              "plain_english": "Mutual ban on soliciting staff engaged in the Services, for the term plus 12 months.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither party shall solicit the other's employees engaged in the Services during the term and for twelve (12) months thereafter.",
+              "reason": "Mutual, and similar to PayTrack (R-009) and Al Noor (R-016).",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.3",
+              "type": "Assignment",
+              "plain_english": "Neither side may assign without consent, except that Lakeshore may assign to its Singapore parent or affiliates.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "except that Lakeshore may assign to Parent or any Parent affiliate.",
+              "reason": "One-sided. If assigned to a non-US group company, AtliQ Inc would have a non-US counterparty, which affects entity fit, tax and invoicing. Consider requiring notice, a US-based assignee, or a parent guarantee.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.4",
+              "type": "Insurance",
+              "plain_english": "AtliQ must carry $1M general liability and $2M professional liability insurance.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Vendor shall maintain commercial general liability ($1,000,000) and professional liability ($2,000,000) insurance.",
+              "reason": "It cannot be confirmed from this document that AtliQ Inc holds these policies. No cyber cover is required here, but Exhibit C may add requirements.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.5",
+              "type": "Notices",
+              "plain_english": "Written notices go to the listed addresses.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "to Vendor, Attn: President.",
+              "reason": "Karandeep is President of AtliQ Inc according to the fact sheet.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.6",
+              "type": "Entire agreement",
+              "plain_english": "The MSA, Exhibits and SOWs are the whole deal.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement, with its Exhibits and SOWs, is the entire agreement between the parties.",
+              "reason": "Anything promised in the proposal or emails that is not in the documents will not bind Lakeshore.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14.7",
+              "type": "Counterparts",
+              "plain_english": "Can be signed electronically and in counterparts.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement may be executed electronically and in counterparts.",
+              "reason": "Standard wording.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Exhibit A",
+              "type": "Rate card",
+              "plain_english": "Sr Data Engineer $72/hr, Data Engineer $55/hr, BI Developer $50/hr; offshore and onshore at the same rate; applies to future SOWs.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "| Senior Data Engineer | $72 |",
+              "reason": "Every rate is below the Crestline rates ($85 / $62 / $58), which brings the Crestline pricing promise (R-004) into play.",
+              "past_positions": "Crestline Retail (Jul 2024): \"Rate card: Sr Data Engineer $85/hr, Data Engineer $62/hr, BI Developer $58/hr.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Exhibit B",
+              "type": "SOW-1 summary",
+              "plain_english": "Four milestones over 19 weeks totalling $64,000, about 1,050 hours.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Estimated effort: approximately 1,050 hours, blended across the roles in Exhibit A.",
+              "reason": "Only a summary is provided. Acceptance criteria and dependencies are not visible. The timeline (M1 in 3 weeks) and fit with the proposal need checking by delivery.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Exhibit C",
+              "type": "Security schedule",
+              "plain_english": "Lakeshore's standard vendor security schedule v3.2, attached separately.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "(Lakeshore standard vendor security schedule v3.2 — attached separately.)",
+              "reason": "Not provided, so it could not be reviewed.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Signatures",
+              "type": "Execution",
+              "plain_english": "Signed by Tom Okafor (Director of Analytics) for Lakeshore; the AtliQ Inc block is blank.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Name: Tom Okafor Title: Director of Analytics",
+              "reason": "Confirm Tom Okafor has authority to sign for Lakeshore. Karandeep is the authorised signatory for AtliQ Inc.",
+              "past_positions": "none recorded",
+              "quote_verified": true
+            }
+          ],
+          "mutuality": {
+            "applies": false,
+            "one_sided_clauses": []
+          },
+          "suggested_next_step": "escalate",
+          "next_step_reason": "There is a register conflict with the Crestline pricing promise (R-004): Lakeshore's fixed rates are below Crestline's for similar data engineering and BI services. There is also a possible IP conflict with the Northwind PipeKit assignment (R-026), and the rules engine flags a regulated data type (financial data). This is a suggestion only; the human reviewer decides.",
+          "clauses_to_push_on": [
+            "4.2 / Exhibit A / 3.4: rates below Crestline's, locked for 24 months (R-004 conflict). Decide on raising the rates or the Crestline exposure.",
+            "7.2: confirm PipeKit and Rohan Iyer materials are not used as Vendor Tools (R-026 / R-023).",
+            "9.2: uncapped carve-outs for confidentiality and indemnity. Consider a super-cap.",
+            "13.3: SIAC Singapore arbitration for a US–US contract. Consider US arbitration or courts.",
+            "12.1 / Exhibit C: obtain and review the security schedule; confirm data handling with counsel given the financial-data flag.",
+            "14.3: one-sided assignment to the Singapore parent or affiliates.",
+            "14.4: confirm insurance cover."
+          ],
+          "not_checked": [
+            "Exhibit C (Lakeshore Information Security Requirements v3.2): not attached.",
+            "Full Exhibit B SOW-1 (only a summary provided): acceptance criteria and dependencies.",
+            "Whether the SOW scope, milestones and rates match AtliQ's proposal.",
+            "The current Crestline rate card and whether the Crestline MSA is still in force (the register says until 31 July 2027).",
+            "Whether PipeKit, Rohan Iyer's work product or other third-party materials will be used in delivery.",
+            "Which lakehouse platform will be used.",
+            "AtliQ Inc insurance certificates (CGL $1M, professional liability $2M).",
+            "Lakeshore travel policy.",
+            "Whether the intercompany agreement between AtliQ Inc and Pvt Ltd covers this engagement and Lakeshore's offshore-access conditions.",
+            "Signing authority of Tom Okafor.",
+            "Any prior emails, calls or proposal commitments with Lakeshore.",
+            "Legal applicability of Illinois PIPA and other regulatory requirements: needs counsel."
+          ],
+          "output_filter_hits": 0,
+          "unverified_quotes": 0
+        },
+        "usage": {
+          "input_tokens": 29787,
+          "output_tokens": 14662,
+          "usd": 0.4124
+        },
+        "elapsed_ms": 120886
+      }
+    },
+    {
+      "id": "2026-09-15_travelhub_services_agreement_draft",
+      "scenario": "Wrong entity: AtliQ Inc named on a Dubai deal",
+      "pass": true,
+      "result": {
+        "id": "2026-09-15_travelhub_services_agreement_draft",
+        "title": "SOFTWARE DEVELOPMENT AND SERVICES AGREEMENT",
+        "facts": {
+          "document_type": "services agreement",
+          "parties": [
+            "TravelHub FZ-LLC",
+            "AtliQ Inc"
+          ],
+          "atliq_entity_named": "both or inconsistent",
+          "counterparty": "TravelHub FZ-LLC",
+          "counterparty_country": "United Arab Emirates",
+          "governing_law": "Laws of the Emirate of Dubai and applicable federal laws of the UAE",
+          "courts_or_arbitration": "Exclusive jurisdiction of the onshore Dubai Courts",
+          "currency": "USD",
+          "value_usd_estimate": 52000,
+          "data_types": [
+            "guest data",
+            "other personal data"
+          ],
+          "documents_referenced": [
+            "Schedule A — Deliverables and Indicative Timeline",
+            "Schedule B — Payment Schedule",
+            "Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data",
+            "Saudi Personal Data Protection Law"
+          ],
+          "is_atliq_paper": false,
+          "is_labelled_mutual": false,
+          "cyber_insurance_required_usd": null,
+          "payment_days": 30,
+          "deal_category": "client services"
+        },
+        "rules": {
+          "region": "Middle East",
+          "expected_entity": "AtliQ Technologies Pvt Ltd",
+          "findings": [
+            {
+              "check": "entity",
+              "status": "conflict",
+              "text": "The document names both AtliQ entities or is inconsistent. Expected signing entity for United Arab Emirates: AtliQ Technologies Pvt Ltd. Finance has had payment delays from exactly this mismatch."
+            },
+            {
+              "check": "governing law",
+              "status": "attention",
+              "text": "Governing law is the counterparty's (Laws of the Emirate of Dubai and applicable federal laws of the UAE). AtliQ has no presence there. Acceptable only as a deliberate trade (Northwind, Al Noor precedent); note the cost of enforcing or defending abroad. Courts: Exclusive jurisdiction of the onshore Dubai Courts."
+            },
+            {
+              "check": "regulated data",
+              "status": "attention",
+              "text": "guest data: Guest or customer personal data of a Gulf client: check local data-protection and residency requirements (UAE PDPL, KSA PDPL). Confirm with counsel."
+            },
+            {
+              "check": "paperwork",
+              "status": "attention",
+              "text": "For a \"client services\" deal the following are expected and not evidenced in this document: NDA (recommended before scoping); Statement of work. Confirm each exists and is signed before data or work moves."
+            }
+          ]
+        },
+        "review": {
+          "summary": "TravelHub FZ-LLC (Dubai Internet City) client draft for a USD 52,000 fixed-fee build of AI features for a consumer travel app. The features include a Partner Hotel Ranking Module covering UAE and KSA hotels, and the counterparty earns commission on hotel bookings. This appears to fall squarely within the live Al Noor GCC hospitality non-compete (R-015, reaffirmed by R-047), which covers hotel distribution providers and binds AtliQ's affiliates, including AtliQ Inc. The Feb 2026 Al Noor consent (R-046) covers Seaside Hotels only. The entity set-up is inconsistent: AtliQ Inc (US) is the contracting party, but clause 7.1 has AtliQ Technologies Pvt Ltd invoice under its GSTIN, and the rules engine flags this as an entity conflict. Other points for the reviewer: governing law and courts are onshore Dubai; the liability cap is based on fees paid in the prior 12 months, with uncapped carve-outs; and UAE/KSA guest personal data is in scope. The rest of the commercial terms (30-day payment, IP split, mutual confidentiality, pay-for-work-done on termination, no LDs) match AtliQ's checklist positions. Suggested next step: escalate.",
+          "register_conflicts": [
+            {
+              "register_id": "R-015",
+              "severity": "conflict",
+              "incoming_clause_quote": "Partner Hotel Ranking Module — a ranking and recommendation service that scores, ranks and surfaces Partner Hotels in the United Arab Emirates and the Kingdom of Saudi Arabia to TravelHub users at the point of search and itinerary building, taking into account user fit, price competitiveness, partner commission tier, availability and conversion likelihood",
+              "register_clause_quote": "the Supplier undertakes that neither it nor any of its Affiliates shall, during the Restricted Period, directly or indirectly, provide data analytics, artificial intelligence or revenue-management services to any Hospitality Business in the GCC.",
+              "explanation": "The register scope for R-015 defines Hospitality Business to include hotel 'distribution, revenue-management and guest-analytics providers' that are headquartered in, or have operations in, the GCC. TravelHub is based in Dubai and lists and books Partner Hotels' inventory under commission agreements (cl. 3.1). That is hotel distribution. The work is AI and analytics (ranking, personalisation, partner performance dashboard). The restriction binds Affiliates, so contracting through AtliQ Inc does not avoid it. Al Noor's term runs to 14 March 2028 plus 18 months, so the restriction is live. A written waiver under Al Noor MSA cl. 12.4 would be needed. The full Al Noor definitions (cl. 1.11, 1.14) are not in this document, and a human should confirm them.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-047",
+              "severity": "conflict",
+              "incoming_clause_quote": "The initial launch markets for the Partner Hotel Ranking Module shall be Dubai, Abu Dhabi, Riyadh and Jeddah, with further cities in the UAE and KSA to be added by configuration.",
+              "register_clause_quote": "It does not extend to ... (b) any other Hospitality Business, whether in the Sultanate of Oman or elsewhere in the GCC; or (c) any Affiliate of the Supplier. ... Save as expressly set out in paragraph 2 above, all other terms of Clause 12 remain in full force and effect",
+              "explanation": "In the Feb 2026 waiver letter, AtliQ reaffirmed that the Al Noor clause 12 restriction applies to every Hospitality Business in the GCC other than Seaside, and that the consent does not cover any AtliQ Affiliate. The existing Seaside consent (R-046) therefore cannot be relied on for TravelHub or for AtliQ Inc.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-004",
+              "severity": "possible conflict",
+              "incoming_clause_quote": "The total fixed fee for the Services is USD 52,000 (fifty-two thousand US dollars), payable in instalments as set out in Schedule B.",
+              "register_clause_quote": "Supplier represents and warrants that the rates, fees and other commercial terms offered to Crestline under this Agreement are and shall remain no less favorable than those offered by Supplier or its Affiliates to any other customer for substantially similar services during the Term.",
+              "explanation": "The Crestline MFN binds AtliQ Inc and its Affiliates globally until 31 July 2027 and covers data engineering, BI and analytics services. This deal includes a BI dashboard and data pipelines (cl. 4.1(c)-(d)) contracted by AtliQ Inc itself. A breach would occur only if the effective rates or terms here are more favourable than Crestline's. That cannot be judged from a fixed fee without the effort estimate (Crestline rate card: Sr Data Engineer $85/hr, Data Engineer $62/hr, BI Developer $58/hr). Crestline has retroactive credit and audit rights.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            }
+          ],
+          "no_conflicts_statement": "Conflicts found: R-015 and R-047 (Al Noor GCC hospitality non-compete), plus a possible conflict with R-004 (Crestline MFN). R-001 (Orbit OTA non-compete) is expired and not reported.",
+          "clauses": [
+            {
+              "clause_ref": "Title / Preamble",
+              "type": "boilerplate",
+              "plain_english": "Names the agreement; the effective date is left blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Software Development and Services Agreement (the \"Agreement\") is entered into as of ____________ 2026 (the \"Effective Date\").",
+              "reason": "The date still needs completing at signing.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.1",
+              "type": "parties",
+              "plain_english": "The customer is TravelHub, a Dubai free zone company.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "TravelHub FZ-LLC, a free zone limited liability company licensed by the Dubai Development Authority under licence no. 104772",
+              "reason": "Counterparty identified. It is a Dubai-headquartered company, which is relevant to the R-015 GCC scope.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.2",
+              "type": "parties / contracting entity",
+              "plain_english": "The AtliQ contracting party is AtliQ Inc, the US company.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "AtliQ Inc, a Delaware corporation, with its principal office at 101 College Road East, Suite 210, Princeton, NJ 08540, USA",
+              "reason": "The rules engine flags an entity CONFLICT. Per the finance fact sheet, a UAE client should contract with AtliQ Technologies Pvt Ltd, because AtliQ Inc serves US clients only. Clause 7.1 also has Pvt Ltd invoicing, which is the mismatch that caused payment delays in 2025.",
+              "past_positions": "Al Noor (Dubai), Mar 2025, was contracted by Pvt Ltd.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2 (Recitals A-B)",
+              "type": "recitals",
+              "plain_english": "TravelHub runs a travel app that books hotels, experiences and transfers with its partners, and is hiring AtliQ to build AI features.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "helps travellers in the Middle East plan trips, build itineraries, and book hotels, experiences and transfers with TravelHub's partners",
+              "reason": "This describes TravelHub as a hotel booking/distribution business in the GCC, which is relevant to R-015/R-047. The Orbit OTA non-compete (R-001) concerned India and expired 30 June 2025, so it is not a conflict.",
+              "past_positions": "Al Noor, Mar 2025: Bhavin said \"we'll never do another hotel in the Gulf anyway.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.1",
+              "type": "definitions",
+              "plain_english": "Partner Hotels are hotels that pay TravelHub commission or have commercial deals for listing and booking.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "\"Partner Hotels\" means hotels, resorts and serviced apartments that have entered into a commercial or commission agreement with TravelHub for the listing and booking of their inventory through the TravelHub App.",
+              "reason": "This confirms TravelHub distributes hotel inventory, which brings it within the 'distribution providers' limb of the Al Noor Hospitality Business definition (R-015).",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.2-3.5",
+              "type": "definitions",
+              "plain_english": "Defines Deliverables, Customer Data, Acceptance and Background Technology.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "\"Background Technology\" means software, tools and know-how owned by AtliQ prior to the Effective Date or developed independently of this Agreement.",
+              "reason": "Standard definitions. The Background Technology carve-out supports AtliQ keeping its own tools.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1(a)",
+              "type": "scope",
+              "plain_english": "Build a personalised itinerary recommendation engine.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Itinerary Personalization Engine — a recommendation service that generates personalised day-by-day itineraries using user preferences, trip purpose, budget, travel dates, past bookings and in-app behaviour",
+              "reason": "This is AI services to a GCC travel and hotel distribution business. It may fall within R-015 alongside 4.1(b). It also uses personal booking and behaviour data.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1(b)",
+              "type": "scope",
+              "plain_english": "Build an AI module ranking UAE/KSA partner hotels, partly by commission tier, to drive bookings.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "Partner Hotel Ranking Module — a ranking and recommendation service that scores, ranks and surfaces Partner Hotels in the United Arab Emirates and the Kingdom of Saudi Arabia",
+              "reason": "This conflicts with the live Al Noor non-compete (R-015, R-047): AI and analytics services to a hospitality distribution provider in the GCC. An Al Noor written waiver is needed, or this scope must be removed.",
+              "past_positions": "Al Noor MSA, Mar 2025: they asked for worldwide, 3 years; K got GCC, term + 18 months. Al Noor consent, Feb 2026: K asked Omar for consent for Seaside only.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1(c)",
+              "type": "scope",
+              "plain_english": "Build a partner performance dashboard showing bookings and commission per hotel.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Partner Performance Dashboard — a dashboard for TravelHub's partnerships team showing impressions, click-through, bookings and commission by Partner Hotel, city and ranking position",
+              "reason": "This is analytics for a hospitality distribution business, so it falls within R-015 scope. It is also BI work relevant to the Crestline MFN (R-004).",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1(d)",
+              "type": "scope",
+              "plain_english": "Build deployment pipelines, monitoring and monthly retraining.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Model Operations — deployment pipelines, monitoring and a monthly retraining process for the models in (a) and (b).",
+              "reason": "It is unclear whether 'monthly retraining' is an ongoing obligation after handover within a fixed fee. Clarify duration.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.2",
+              "type": "scope",
+              "plain_english": "Launch markets are Dubai, Abu Dhabi, Riyadh and Jeddah, with more UAE/KSA cities to follow.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "The initial launch markets for the Partner Hotel Ranking Module shall be Dubai, Abu Dhabi, Riyadh and Jeddah, with further cities in the UAE and KSA to be added by configuration.",
+              "reason": "All of these markets are GCC territory under R-015/R-047.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.3",
+              "type": "staffing",
+              "plain_english": "AtliQ provides a team, which may work remotely, with a daily Gulf-hours stand-up.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "AtliQ's team may work remotely but shall be available for a daily stand-up during Gulf Standard Time business hours.",
+              "reason": "This is compatible with Pune delivery. Note that AtliQ Inc would sub-contract delivery to Pvt Ltd, and the contract does not prohibit this. The Al Noor ring-fencing (R-048) is limited to Seaside, but staff choice should avoid using Al Noor confidential information.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.4",
+              "type": "customer obligations",
+              "plain_english": "TravelHub provides cloud access, docs, booking data and a product owner.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "TravelHub shall provide access to its cloud environment, API documentation, historical booking data and a product owner with decision-making authority.",
+              "reason": "These dependencies support AtliQ, but there is no express relief for delays caused by TravelHub. That risk is low given there are no LDs.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.1",
+              "type": "timeline",
+              "plain_english": "AtliQ uses commercially reasonable efforts to meet an indicative timeline.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "AtliQ shall use commercially reasonable efforts to meet the indicative timeline in Schedule A.",
+              "reason": "No liquidated damages and no hard deadline. This is favourable.",
+              "past_positions": "Acme, Northwind and Trustline: K's LD position was 0.5%/week of milestone, capped at 5%. Not needed here.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.2-5.3",
+              "type": "acceptance",
+              "plain_english": "TravelHub has 10 business days to review, after which the Deliverable is deemed accepted; AtliQ fixes non-conformities.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "If TravelHub fails to respond within such period, the Deliverable shall be deemed accepted.",
+              "reason": "Deemed acceptance protects AtliQ's payment triggers.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.1",
+              "type": "fees",
+              "plain_english": "Fixed fee of USD 52,000 in instalments.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "The total fixed fee for the Services is USD 52,000 (fifty-two thousand US dollars), payable in instalments as set out in Schedule B.",
+              "reason": "A fixed fee for an 18-week build plus retraining should be checked against the proposal. It also needs comparing against the Crestline MFN (R-004) effective rates.",
+              "past_positions": "Crestline, Jul 2024: Dhaval said \"We never discount, so it's harmless — fine.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.2-6.3",
+              "type": "tax / expenses",
+              "plain_english": "VAT is extra; pre-approved travel is reimbursed at cost.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "The fees are exclusive of any applicable value added tax, which, if applicable, shall be charged in addition.",
+              "reason": "The tax treatment depends on which entity invoices (GST vs US). Withholding tax is not addressed. Finance should confirm once the entity is fixed.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.1",
+              "type": "invoicing",
+              "plain_english": "AtliQ Technologies Pvt Ltd raises the invoices, although AtliQ Inc is the party to the contract.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "Invoices under this Agreement shall be raised by AtliQ Technologies Pvt Ltd, GSTIN 27AAKCA4821F1Z3",
+              "reason": "Rules engine entity CONFLICT. The contracting entity (AtliQ Inc) and the invoicing entity (Pvt Ltd) differ. Fix by making Pvt Ltd the contracting party throughout.",
+              "past_positions": "Finance notes: such mismatches caused payment delays twice in 2025.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.2",
+              "type": "payment terms",
+              "plain_english": "30 days from invoice for undisputed invoices.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "TravelHub shall pay each undisputed invoice within thirty (30) days of the invoice date",
+              "reason": "Matches the checklist (30 days).",
+              "past_positions": "Trustline, Aug 2026: K got 45 days, down from 90.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.3-7.4",
+              "type": "late payment / bank charges",
+              "plain_english": "Late payment interest is 1% per month; each side bears its own bank charges.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Late payments shall bear interest at the rate of one percent (1%) per month or the maximum rate permitted by law, whichever is lower.",
+              "reason": "These terms favour AtliQ or are neutral.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.1-8.2",
+              "type": "term / termination for breach",
+              "plain_english": "Runs until the Services are complete and paid; either side may terminate for an uncured material breach after 30 days.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Either Party may terminate this Agreement upon written notice if the other Party materially breaches this Agreement and fails to cure within thirty (30) days.",
+              "reason": "Mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.3",
+              "type": "termination for convenience",
+              "plain_english": "Only TravelHub can terminate for convenience, and it pays for work done.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "TravelHub may terminate for convenience with thirty (30) days' written notice and shall pay for all work performed up to the termination date.",
+              "reason": "Pay-for-work-done matches the checklist. The right is one-sided, which is typical for client paper. AtliQ could ask for a reciprocal right; that is a judgement call.",
+              "past_positions": "CloudSpan, Aug 2025: K asked for, and got, mutual 90-day termination for convenience.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.4",
+              "type": "termination handover",
+              "plain_english": "On termination AtliQ hands over completed and in-progress work.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "On termination, AtliQ shall deliver all completed and in-progress Deliverables to TravelHub.",
+              "reason": "Handover is not expressly conditional on payment for that work. IP only transfers on full payment (10.1), so this may be acceptable, but tying delivery to payment would be clearer.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9",
+              "type": "confidentiality",
+              "plain_english": "Mutual confidentiality with standard exclusions, surviving 3 years.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Each Party agrees to keep the other's non-public business, technical and financial information confidential and use it solely for the purposes of this Agreement.",
+              "reason": "Mutual, consistent with the checklist. Breach of confidentiality is uncapped under 12.2; see that clause.",
+              "past_positions": "GlobalMart, Mar 2026: K said \"We only sign mutual.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.1-10.3",
+              "type": "intellectual property",
+              "plain_english": "TravelHub owns bespoke Deliverables, including model weights, on full payment; AtliQ keeps its Background Technology and licenses it; TravelHub keeps Customer Data.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "AtliQ retains ownership of its Background Technology and grants TravelHub a perpetual, non-exclusive, royalty-free licence to use any Background Technology incorporated in the Deliverables as part of the TravelHub App.",
+              "reason": "Matches the checklist and the Orbit, PayTrack, Acme and Al Noor IP pattern. Ensure no PipeKit-type component already assigned to Northwind (R-026) is reused as Background Technology.",
+              "past_positions": "PayTrack, Acme and Trustline used the same structure.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11",
+              "type": "warranties",
+              "plain_english": "Professional performance; materially conforming Deliverables for 60 days; other warranties disclaimed.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "the Deliverables will materially conform to Schedule A for sixty (60) days after Acceptance",
+              "reason": "A short, defined warranty. Note that Schedule A includes performance metrics.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.1",
+              "type": "liability exclusion",
+              "plain_english": "No indirect or consequential damages or loss of profits, for either side.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party shall be liable for indirect, consequential, special or punitive damages or loss of profits.",
+              "reason": "Mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "12.2",
+              "type": "liability cap",
+              "plain_english": "Each side's liability is capped at fees paid in the 12 months before the claim, except confidentiality breach and wilful misconduct, which are uncapped.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "Each Party's total liability arising out of this Agreement shall not exceed the total fees paid under this Agreement in the twelve (12) months preceding the claim, except for breach of confidentiality or wilful misconduct.",
+              "reason": "The checklist position is 1x fees. A 'fees paid' cap would be as low as USD 10,400 early in the project. That favours AtliQ as defendant but also limits its claims. The uncapped confidentiality carve-out could capture a personal-data incident. Consider capping confidentiality at a multiple. The deal is under USD 100k, so this is not an escalation trigger on its own.",
+              "past_positions": "PayTrack, Jan 2025: \"Liability cap stays 1x fees.\" Kessler, Jan 2026: K refused unlimited liability and offered 1x fees with carve-outs.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "13",
+              "type": "indemnity",
+              "plain_english": "AtliQ indemnifies for IP infringement; TravelHub indemnifies for Customer Data and unlawful use of the Deliverables.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "TravelHub shall defend and indemnify AtliQ against third-party claims arising from Customer Data or TravelHub's use of the Deliverables in breach of applicable law.",
+              "reason": "Reciprocal, and AtliQ does not cover TravelHub's own fault. It is unclear whether indemnities sit inside the 12.2 cap; a human should confirm.",
+              "past_positions": "PayTrack, Jan 2025: K insisted on mutual indemnity, with each side covering its own breach or negligence.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "14",
+              "type": "data protection",
+              "plain_english": "AtliQ processes personal data only on instructions, under UAE PDPL and Saudi PDPL, and keeps Customer Data in TravelHub's cloud.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "AtliQ shall process personal data only on TravelHub's documented instructions and in compliance with Federal Decree-Law No. 45 of 2021 on the Protection of Personal Data and, where applicable, the Saudi Personal Data Protection Law.",
+              "reason": "Rules engine: regulated guest data for a Gulf client, so check UAE/KSA PDPL residency and cross-border rules with counsel. Confirm whether remote access from Pune into the TravelHub cloud is permitted under 14.2 and the PDPLs. Breach-notice and sub-processor terms are absent.",
+              "past_positions": "Al Noor (R-018): Guest Data stays in the UAE, with access from India remotely only.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "15",
+              "type": "governing law / jurisdiction",
+              "plain_english": "Dubai and UAE law, with exclusive onshore Dubai Courts.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The courts of the Emirate of Dubai (onshore Dubai Courts) shall have exclusive jurisdiction over any dispute arising out of or in connection with this Agreement.",
+              "reason": "Rules engine ATTENTION: this is the counterparty's law, and AtliQ has no UAE presence. The checklist says 'ours'. Onshore courts (not DIFC or arbitration) may mean Arabic-language proceedings and enforcement cost. Consider proposing DIFC or arbitration.",
+              "past_positions": "Al Noor, Mar 2025: DIFC law and courts accepted. Northwind, Jun 2025: English law/LCIA accepted (\"not worth losing the deal over\"). CloudSpan: Singapore/SIAC.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "16.1",
+              "type": "non-solicitation",
+              "plain_english": "Mutual 12-month non-solicit of staff involved in the Services.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "During the term and for twelve (12) months thereafter, neither Party shall solicit for employment any employee of the other Party directly involved in the Services.",
+              "reason": "Mutual and in line with the Al Noor and PayTrack non-solicits.",
+              "past_positions": "Al Noor cl. 12.5: mutual, 12 months.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "16.2",
+              "type": "assignment",
+              "plain_english": "No assignment without consent, except to an Affiliate or merger successor.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party may assign this Agreement without the other's prior written consent, except to an Affiliate or successor in a merger.",
+              "reason": "Mutual. It could allow novation from AtliQ Inc to Pvt Ltd, though fixing the party at signing is cleaner. It does not address subcontracting.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "16.3",
+              "type": "publicity",
+              "plain_english": "AtliQ may list TravelHub as a customer with approval.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "AtliQ may list TravelHub as a customer on its website with TravelHub's prior approval.",
+              "reason": "Publicly listing a GCC hospitality distribution client could surface the R-015 issue to Al Noor.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "16.4",
+              "type": "entire agreement",
+              "plain_english": "The Agreement and Schedules are the whole deal.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement and its Schedules constitute the entire agreement of the Parties.",
+              "reason": "Standard. Any proposal commitments not in the Agreement would be lost.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "16.5",
+              "type": "notices",
+              "plain_english": "Notices go to TravelHub's co-founder and AtliQ's President.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Notices to TravelHub shall be sent to Ms. Nadia Rahman, Co-founder; notices to AtliQ shall be sent to its President.",
+              "reason": "No addresses or email are given. 'President' matches AtliQ Inc's title, so update this if the entity changes.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Schedule A",
+              "type": "deliverables / acceptance criteria",
+              "plain_english": "Four phases over 18 weeks, with acceptance requiring a 10% NDCG@10 uplift and p95 latency under 250 ms.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "Acceptance criteria: offline ranking uplift (NDCG@10) of at least 10% over TravelHub's current rule-based sort; p95 API latency under 250 ms.",
+              "reason": "Payment depends on a model-performance outcome that relies on TravelHub's data quality and infrastructure. Consider tying acceptance to agreed baselines set in Phase 1, or to TravelHub's cloud performance.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Schedule B",
+              "type": "payment schedule",
+              "plain_english": "20% on signing, then three payments on phase acceptance.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Signing of this Agreement | 10,400",
+              "reason": "An upfront payment is favourable. Later payments depend on Schedule A acceptance.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Signatures",
+              "type": "execution",
+              "plain_english": "The signature block is for AtliQ Inc.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "AtliQ Inc\nBy: ______________________",
+              "reason": "This repeats the entity mismatch flagged by the rules engine. The expected signatory entity is AtliQ Technologies Pvt Ltd.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            }
+          ],
+          "mutuality": {
+            "applies": false,
+            "one_sided_clauses": []
+          },
+          "suggested_next_step": "escalate",
+          "next_step_reason": "There is a register conflict: the scope (AI hotel ranking, personalisation and partner analytics for a Dubai-based hotel distribution business in the UAE and KSA) falls within the live Al Noor GCC hospitality non-compete (R-015/R-047), which binds AtliQ Inc as an Affiliate. Regulated UAE/KSA guest personal data is also in scope, and the rules engine flags an entity conflict. This is a suggestion only; the human decides.",
+          "clauses_to_push_on": [
+            "4.1(b), 4.2, 4.1(a), 4.1(c): obtain a written Al Noor waiver under MSA cl. 12.4 before proceeding, or restructure or decline the scope",
+            "1.2, 7.1, Signatures, 16.5: make AtliQ Technologies Pvt Ltd the contracting, invoicing and signing entity",
+            "15: propose DIFC courts or arbitration instead of exclusive onshore Dubai Courts",
+            "12.2: cap on fees payable (1x total fees) rather than fees paid in the prior 12 months; consider a cap on the confidentiality carve-out",
+            "14: add breach-notice, sub-processor (Pune delivery) and remote-access language; counsel to confirm UAE/KSA PDPL",
+            "Schedule A: make the NDCG uplift acceptance criterion depend on a baseline agreed in Phase 1 and on TravelHub's data and infrastructure",
+            "4.1(d): define how long monthly retraining lasts within the fixed fee",
+            "8.4: tie handover of in-progress work to payment"
+          ],
+          "not_checked": [
+            "Full Al Noor MSA definitions (cl. 1.11 Hospitality Business, 1.14) and whether a waiver for TravelHub has been or could be requested from Al Noor",
+            "Whether TravelHub's cloud environment is a CloudSpan Competing Platform and whether AtliQ would act as an implementation partner for it in the GCC (R-030)",
+            "Effective hourly rates implied by the USD 52,000 fixed fee versus the Crestline rate card (R-004 MFN)",
+            "The AtliQ proposal or SOW and any NDA with TravelHub (the rules engine notes these are expected but not evidenced)",
+            "UAE PDPL and KSA PDPL data residency and cross-border transfer requirements (counsel needed)",
+            "Tax and withholding treatment for UAE invoicing by the correct entity (finance)",
+            "Insurance coverage for uncapped confidentiality or data liability",
+            "Prior emails or calls with TravelHub (Nadia Rahman) on scope and pricing",
+            "Whether any reused Background Technology was previously assigned to another client (e.g. PipeKit to Northwind, R-026)"
+          ],
+          "output_filter_hits": 0,
+          "unverified_quotes": 0
+        },
+        "usage": {
+          "input_tokens": 29439,
+          "output_tokens": 13775,
+          "usd": 0.3933
+        },
+        "elapsed_ms": 118380
+      }
+    },
+    {
+      "id": "2026-09-25_finserve_capital_mutual_nda_draft",
+      "scenario": "NDA that says mutual but is not",
+      "pass": true,
+      "result": {
+        "id": "2026-09-25_finserve_capital_mutual_nda_draft",
+        "title": "MUTUAL NON-DISCLOSURE AGREEMENT",
+        "facts": {
+          "document_type": "NDA",
+          "parties": [
+            "FinServe Capital Private Limited",
+            "AtliQ Technologies Private Limited"
+          ],
+          "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+          "counterparty": "FinServe Capital Private Limited",
+          "counterparty_country": "India",
+          "governing_law": "India",
+          "courts_or_arbitration": "Courts at Mumbai (exclusive jurisdiction)",
+          "currency": "not stated",
+          "value_usd_estimate": null,
+          "data_types": [
+            "financial data",
+            "other personal data"
+          ],
+          "documents_referenced": [
+            "Company's information-security policy",
+            "Digital Personal Data Protection Act, 2023"
+          ],
+          "is_atliq_paper": false,
+          "is_labelled_mutual": true,
+          "cyber_insurance_required_usd": null,
+          "payment_days": null,
+          "deal_category": "nda"
+        },
+        "rules": {
+          "region": "India",
+          "expected_entity": "AtliQ Technologies Pvt Ltd",
+          "findings": [
+            {
+              "check": "entity",
+              "status": "ok",
+              "text": "AtliQ Technologies Pvt Ltd is the expected entity for a India counterparty."
+            },
+            {
+              "check": "governing law",
+              "status": "ok",
+              "text": "Governing law (India) matches the signing entity's home jurisdiction."
+            },
+            {
+              "check": "regulated data",
+              "status": "attention",
+              "text": "financial data: Financial customer data in India: check the client's regulator requirements (RBI outsourcing rules for banks and NBFCs) and India's DPDP Act. Confirm with counsel."
+            },
+            {
+              "check": "paperwork",
+              "status": "ok",
+              "text": "Documents expected for a \"nda\" deal appear to be referenced."
+            }
+          ]
+        },
+        "review": {
+          "summary": "FinServe Capital's own form, labelled a Mutual NDA, sent ahead of the 1 October data walkthrough. Despite the title, nearly every obligation binds only AtliQ (the \"Recipient\"). Only FinServe's information is protected, and only FinServe may use Residuals. The draft also adds terms that go beyond a normal NDA: a 12-month post-termination non-compete covering every bank, NBFC, wealth manager, broker and fintech in India (Clause 8.1); a one-way 24-month no-hire covering FinServe and its Affiliates (Clause 8.2); an uncapped one-way indemnity (Clause 10.2); and survival 'in perpetuity' (Clause 7.2), which may also extend the covenants. Clause 8.1 appears to collide with AtliQ's live Trustline NBFC engagement (collections analytics for an Indian NBFC lender) and possibly with PayTrack. Data in scope includes customer and portfolio data from an RBI/SEBI-regulated lender, which the rules engine flags as regulated financial data. The entity (AtliQ Technologies Pvt Ltd) and governing law (India, Mumbai courts) match the expected position per the rules engine. Suggested next step: escalate. This is a brief for a human reviewer, not legal advice.",
+          "register_conflicts": [
+            {
+              "register_id": "R-053",
+              "severity": "conflict",
+              "incoming_clause_quote": "the Recipient shall not, during the term of this Agreement and for a period of twelve (12) months after its termination, provide services similar to those contemplated by the Proposed Transaction to any Competitor.",
+              "register_clause_quote": "Upon full payment, intellectual property in the Deliverables developed specifically for the Company shall vest in the Company. The Service Provider retains its pre-existing intellectual property and grants the Company a perpetual, non-exclusive, royalty-free licence to use it as incorporated in the Deliverables.",
+              "explanation": "Clause 1.5 defines Competitor as \"any bank, non-banking financial company, wealth manager, broker or fintech platform operating in India that offers products substantially similar to those of the Company\". The Proposed Transaction is \"data analytics and reporting solutions for the Company's lending and wealth businesses\". AtliQ is currently delivering collections analytics (data mart, early-warning scorecard, Power BI dashboards) to Trustline NBFC Limited, an Indian NBFC lender. The register shows that MSA running for one year from 15 August 2026 (R-053 to R-056). The restriction applies 'during the term', i.e. from signature. Signing would therefore likely put the ongoing Trustline work, and any extension or new SOW, in breach from day one, and bar it for 12 months after termination. Whether Trustline's products are 'substantially similar' to FinServe's lending products is a human judgement, but on the face of the register they overlap.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            },
+            {
+              "register_id": "R-008",
+              "severity": "possible conflict",
+              "incoming_clause_quote": "the Recipient shall not, during the term of this Agreement and for a period of twelve (12) months after its termination, provide services similar to those contemplated by the Proposed Transaction to any Competitor.",
+              "register_clause_quote": "Upon full payment, all intellectual property in the Deliverables developed specifically for PayTrack shall vest in PayTrack.",
+              "explanation": "PayTrack is an Indian fintech (payments reconciliation and merchant settlement) with a live MSA, two years from 22 January 2025 (R-009 to R-011). The definition of Competitor includes any \"fintech platform operating in India that offers products substantially similar to those of the Company\". FinServe's named businesses are lending and wealth, so overlap with PayTrack's payments product is uncertain. If it overlaps, continuing or renewing PayTrack analytics work would be restricted. A human needs to check FinServe's and its Affiliates' product lines.",
+              "incoming_quote_verified": true,
+              "register_quote_verified": true
+            }
+          ],
+          "no_conflicts_statement": "Conflicts found: 1 conflict and 1 possible conflict against the 49 commitments on the register (see register_conflicts). No other register entries were found to conflict. Orbit entries R-001/R-002 have expired and are not relevant.",
+          "clauses": [
+            {
+              "clause_ref": "Header / Parties",
+              "type": "parties",
+              "plain_english": "FinServe (defined to include all its Affiliates as the 'Company') and AtliQ Technologies Pvt Ltd (defined only as the 'Recipient'). The Effective Date is left blank.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "(together with its Affiliates, the \"Company\"); and",
+              "reason": "The AtliQ entity is correct for an Indian counterparty (rules engine OK). However, defining AtliQ solely as 'Recipient' and FinServe as discloser is why the 'mutual' NDA is one-way in practice. Folding all FinServe Affiliates into 'Company' also widens who counts as a Competitor (8.1) and whose staff are covered by the no-hire (8.2). The Effective Date blank must be filled.",
+              "past_positions": "No direct precedent found in the negotiation history.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Recitals A-B",
+              "type": "recitals / purpose",
+              "plain_english": "The parties are exploring analytics and reporting work for FinServe's lending and wealth businesses and expect a mutual exchange of information.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "the Parties anticipate a mutual exchange of information",
+              "reason": "Acceptable as written. Note the recital promises a mutual exchange that the operative clauses do not deliver. This is useful leverage when asking for the clauses to be made mutual.",
+              "past_positions": "GlobalMart NDA, Mar 2026 (K): \"We only sign mutual — we'll be sharing our architecture too.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.1",
+              "type": "definition - Affiliate",
+              "plain_english": "Standard control-based definition of Affiliate.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "\"Affiliate\" means any entity that controls, is controlled by or is under common control with a Party.",
+              "reason": "Standard wording. Its effect depends on how it is used in the preamble, 8.2 and 11.3.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.2",
+              "type": "definition - Confidential Information",
+              "plain_english": "Only information disclosed by FinServe to AtliQ is protected. AtliQ's own information (architecture, methods, pricing) gets no protection.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "disclosed or made available by or on behalf of the Company to the Recipient or its Representatives",
+              "reason": "This is the core one-sidedness. AtliQ is expected to share its technology approach during scoping, and that material would be unprotected. Ask for the definition to cover information disclosed by either Party.",
+              "past_positions": "GlobalMart NDA, Mar 2026: one-way NDA rejected; K: \"We only sign mutual — we'll be sharing our architecture too.\" They agreed to mutual. Checklist (Karandeep, 2024): \"NDAs → just sign if mutual\".",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.3",
+              "type": "definition - Representatives",
+              "plain_english": "Representatives are directors, officers, employees and professional advisers. Contractors, freelancers and affiliates are not included.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "\"Representatives\" means a Party's directors, officers, employees and professional advisers.",
+              "reason": "AtliQ could not share FinServe information with freelancers or subcontractors. That may be fine at evaluation stage, but would restrict any delivery that relies on contractors. The reviewer should decide whether contractors bound in writing need to be added.",
+              "past_positions": "Meridian Healthcare NDA, Jul 2026: signed within the hour with no changes. The register (R-050) now records that Meridian information can go only to employees, excluding freelancers and subcontractors.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.4",
+              "type": "definition - Residuals",
+              "plain_english": "Residuals are information remembered by people who saw exchanged information, including ideas and know-how. It covers information from both sides.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "\"Residuals\" means information retained in the unaided memory of individuals who have had access to information exchanged in connection with the Proposed Transaction, including ideas, concepts, know-how and techniques.",
+              "reason": "Read with 4.1, this lets FinServe use AtliQ's ideas, know-how and techniques remembered from the walkthroughs. See 4.1.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.5",
+              "type": "definition - Competitor",
+              "plain_english": "A Competitor is any Indian bank, NBFC, wealth manager, broker or fintech with products substantially similar to FinServe's, including its Affiliates' products.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "\"Competitor\" means any bank, non-banking financial company, wealth manager, broker or fintech platform operating in India that offers products substantially similar to those of the Company.",
+              "reason": "This very broad definition drives the non-compete in 8.1. It appears to capture Trustline NBFC (live client) and possibly PayTrack.",
+              "past_positions": "Al Noor MSA, Mar 2025: K narrowed a worldwide non-compete: \"Worldwide for three years would stop us working in hospitality altogether.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2.1",
+              "type": "confidentiality obligations",
+              "plain_english": "AtliQ must use FinServe information only for the deal, share it only with Representatives on a need-to-know basis, follow FinServe's security policy as notified from time to time, and is responsible for its Representatives.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "apply security measures no less stringent than those required under the Company's information-security policy as notified to the Recipient from time to time",
+              "reason": "The obligations bind only the Recipient. The security policy has not been provided and can change unilaterally. Ask for a copy before the walkthrough, and for the obligations to apply to both Parties.",
+              "past_positions": "Crestline (R-005) and Brightwater (R-045) also tie AtliQ to client security requirements 'as updated'. Brightwater was signed without redlines (\"Looks standard, signing now\"), and the negotiation history points to an April post-mortem on that deal.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2.2",
+              "type": "confidentiality of discussions",
+              "plain_english": "AtliQ may not disclose that talks are happening without FinServe's consent.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The Recipient shall not, without the Company's prior written consent, disclose to any person the fact that discussions are taking place or any of their terms.",
+              "reason": "Commercially low-risk, but one-way. FinServe is free to disclose. Ask for it to be mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.1",
+              "type": "exceptions",
+              "plain_english": "Standard exceptions apply (public information, prior possession, third-party receipt), but AtliQ must prove them with contemporaneous written evidence. There is no exception for independently developed information.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The obligations in Clause 2 shall not apply to information which the Recipient can demonstrate by contemporaneous written evidence:",
+              "reason": "The independent-development exception is missing. That matters because AtliQ already builds lending analytics for other clients, e.g. Trustline's early-warning scorecard. Without it, similar work done independently could be argued to derive from FinServe's information. The evidence standard is also strict.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.2",
+              "type": "compelled disclosure",
+              "plain_english": "If law or a regulator requires disclosure, AtliQ must give FinServe prior written notice and disclose only the minimum.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "it shall give the Company prior written notice and disclose only such part as it is legally required to disclose.",
+              "reason": "Prior notice is unconditional. Some regulatory demands prohibit notice. Ask to add 'to the extent legally permitted'.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1",
+              "type": "residuals",
+              "plain_english": "FinServe alone may use anything its people remember, including AtliQ's ideas and techniques, for any purpose, including procuring products and services.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "the Company shall be free to use Residuals for any purpose, including the development, marketing and procurement of products and services",
+              "reason": "This is one-sided. Combined with 1.2, it means AtliQ's architecture and approach shared during scoping could be reused by FinServe or handed to another vendor. Ask for deletion or a mutual, narrow version.",
+              "past_positions": "GlobalMart NDA, Mar 2026 (K): \"we'll be sharing our architecture too.\" Checklist: \"IP → client owns what we build for them, we keep our own stuff\".",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.1",
+              "type": "return / destruction",
+              "plain_english": "On request, AtliQ must return or destroy everything within 5 business days and give a director-signed certificate.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "return or permanently destroy all Confidential Information and certify such destruction in writing signed by a director.",
+              "reason": "The timeline is tight and there is no carve-out for automatic backups or legally required retention. It is also one-way. This is a judgement call.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.1",
+              "type": "regulatory co-operation / audit",
+              "plain_english": "AtliQ must co-operate with, and give records access to, FinServe and its regulators (RBI, SEBI) in relation to the information.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "agrees to provide such co-operation and access to records as the Company or its regulators may reasonably require in connection with the Confidential Information.",
+              "reason": "The rules engine flags financial customer data in India, which means checking RBI outsourcing rules and the DPDP Act. Confirm with counsel what will actually be shared at the 1 Oct walkthrough. The audit obligation itself is in line with commitments already given to regulated clients.",
+              "past_positions": "The register shows similar regulator-audit terms already accepted: Trustline R-056 (RBI may inspect and audit) and PayTrack R-011 (PayTrack and regulators may audit).",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.2",
+              "type": "data protection / breach notice",
+              "plain_english": "AtliQ must comply with the DPDP Act for personal data and report any personal data breach within six hours.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "shall notify the Company of any personal data breach within six (6) hours.",
+              "reason": "Six hours runs with no 'of becoming aware' trigger. Personal data from a regulated lender is in scope, which is the rules engine's regulated-data flag. Ask to add 'of becoming aware' and to limit personal data shared at the evaluation stage.",
+              "past_positions": "Register: Trustline R-055 already commits AtliQ to a six-hour incident report 'of becoming aware'. PayTrack R-011 is 24 hours; Meridian R-051 is 24 hours.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.1",
+              "type": "term",
+              "plain_english": "The agreement has no fixed end date and runs until either party gives 30 days' notice.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "shall continue until terminated by either Party on thirty (30) days' written notice.",
+              "reason": "The evergreen term means the 8.1 and 8.2 covenants run indefinitely unless someone terminates. Termination is mutual, which helps, but AtliQ would need to remember to terminate.",
+              "past_positions": "CloudSpan, Aug 2025: K obtained mutual 90-day termination for convenience.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.2",
+              "type": "survival",
+              "plain_english": "All of AtliQ's obligations survive termination forever.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The obligations of the Recipient under this Agreement shall survive termination and shall continue in perpetuity.",
+              "reason": "Perpetual confidentiality for all information, rather than only personal data or trade secrets, is onerous. 'All obligations' could also be read to override the 12- and 24-month limits in Clause 8. Ask for a fixed survival period, e.g. a number of years, and to exclude Clause 8 from it.",
+              "past_positions": "Meridian NDA, Jul 2026 (signed unchanged): obligations survive 3 years after expiry (R-050/R-051).",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.1",
+              "type": "non-compete",
+              "plain_english": "During the term and for 12 months after it, AtliQ may not provide analytics/reporting services similar to this deal to any Indian bank, NBFC, wealth manager, broker or fintech with similar products.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "the Recipient shall not, during the term of this Agreement and for a period of twelve (12) months after its termination, provide services similar to those contemplated by the Proposed Transaction to any Competitor.",
+              "reason": "It appears to conflict with the live Trustline NBFC engagement (R-053 to R-056) and possibly PayTrack (R-008 to R-011). It applies from signature, with no deal yet won, and would block AtliQ from Indian BFSI analytics generally. A non-compete is unusual in an NDA. Ask for deletion.",
+              "past_positions": "Al Noor MSA, Mar 2025: worldwide 3-year non-compete narrowed to GCC, term + 18 months; K: \"Worldwide for three years would stop us working in hospitality altogether.\" Bhavin at the time: \"we'll never do another hotel in the Gulf anyway\". A consent letter for Seaside was nonetheless needed by Feb 2026.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.2",
+              "type": "non-solicit / no-hire",
+              "plain_english": "For the term plus 24 months, AtliQ may not solicit, hire or engage any employee or consultant of FinServe or its Affiliates.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "directly or indirectly solicit, hire or engage any employee or consultant of the Company.",
+              "reason": "One-way, 24 months, covering all staff and consultants of FinServe and all its Affiliates, not just those AtliQ dealt with, and with no carve-out for general advertisements. Most register non-solicits are mutual, 6-12 months, and limited to staff involved.",
+              "past_positions": "Register: Acme R-013 (mutual, 6 months), PayTrack R-009 (mutual, 12 months), Al Noor R-016 (mutual, 12 months, general ads excepted). Meridian NDA, Jul 2026: signed without changes, giving the one-way 24-month restriction now on the register as R-049.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.1",
+              "type": "no warranty",
+              "plain_english": "FinServe gives no warranty on the accuracy of its information.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Confidential Information is provided \"as is\" and the Company makes no warranty as to its accuracy or completeness.",
+              "reason": "Standard. It would be fine as a mutual clause.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.2",
+              "type": "no obligation to proceed",
+              "plain_english": "Neither party has to go ahead with the deal.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Nothing in this Agreement obliges either Party to proceed with the Proposed Transaction.",
+              "reason": "Mutual and standard.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.3",
+              "type": "no licence",
+              "plain_english": "No licence is granted under FinServe's IP.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "No licence under any intellectual property right of the Company is granted by this Agreement.",
+              "reason": "It protects only FinServe's IP. Ask for it to cover both Parties, particularly given the Residuals clause.",
+              "past_positions": "Checklist: \"we keep our own stuff\".",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.1",
+              "type": "equitable relief",
+              "plain_english": "FinServe may seek injunctions without proving actual damage.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "the Company shall be entitled to injunctive relief and specific performance, without proof of actual damage",
+              "reason": "Common in NDAs, but one-way. Ask for it to be mutual.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.2",
+              "type": "indemnity",
+              "plain_english": "AtliQ indemnifies FinServe for all losses, costs and legal fees from any breach by AtliQ or its Representatives. There is no cap and no reciprocity.",
+              "verdict": "conflict",
+              "confidence": "high",
+              "quote": "The Recipient shall indemnify the Company for all losses, costs and expenses (including legal fees) arising from any breach of this Agreement by the Recipient or its Representatives.",
+              "reason": "This is an uncapped, one-way indemnity, contrary to AtliQ's stated positions (checklist: mutual indemnity; liability not unlimited). Combined with breach-prone clauses (6-hour notice, perpetual obligations, non-compete), the exposure is open-ended. Deal value is unknown.",
+              "past_positions": "Checklist (2024): \"liability → 1x fees. NOT unlimited\"; \"indemnity → mutual\". PayTrack, Jan 2025: K proposed mutual indemnity and they accepted. Kessler, Jan 2026: K refused unlimited liability: \"Unlimited liability on a €120k deal means one bad incident … and the company is gone.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.1",
+              "type": "entire agreement",
+              "plain_english": "This document is the whole agreement on its subject.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement constitutes the entire agreement between the Parties with respect to its subject matter.",
+              "reason": "Standard boilerplate.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.2",
+              "type": "amendment / waiver",
+              "plain_english": "Changes must be in writing and signed by both sides.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "No amendment or waiver shall be effective unless in writing and signed by authorised signatories of both Parties.",
+              "reason": "Mutual and standard.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.3",
+              "type": "assignment",
+              "plain_english": "FinServe can assign to Affiliates; AtliQ cannot assign at all.",
+              "verdict": "needs attention",
+              "confidence": "high",
+              "quote": "The Recipient may not assign this Agreement. The Company may assign it to any Affiliate.",
+              "reason": "One-sided. Ask that neither party assign without consent, or that both may assign to Affiliates.",
+              "past_positions": "Trustline MSA (R-054): mutual \"Neither Party shall assign or subcontract this Agreement without prior written consent of the other.\"",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.4",
+              "type": "governing law / jurisdiction",
+              "plain_english": "Indian law applies, with exclusive jurisdiction in Mumbai courts.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement shall be governed by the laws of India, and the courts at Mumbai shall have exclusive jurisdiction.",
+              "reason": "The rules engine confirms governing law matches the signing entity's home jurisdiction.",
+              "past_positions": "Checklist: \"gov law → ours (India for Pvt Ltd)\". Acme, Mar 2025: Indian law, Mumbai arbitration.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "11.5",
+              "type": "counterparts / e-signature",
+              "plain_english": "The agreement can be signed in counterparts and electronically.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement may be executed in counterparts and by electronic signature.",
+              "reason": "Standard boilerplate.",
+              "past_positions": "None recorded.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Signatures",
+              "type": "execution",
+              "plain_english": "FinServe signs through Arjun Mehta (Head of Strategy). AtliQ's signatory details are blank.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Designation: Head of Strategy",
+              "reason": "Per the fact sheet, Karandeep (CEO) is AtliQ's authorised signatory. Whether FinServe's Head of Strategy has authority to bind FinServe (and its Affiliates) could not be verified.",
+              "past_positions": "Meridian NDA, Jul 2026: signed within the hour before a data walkthrough, which produced R-049 and R-050. The same time pressure applies here (walkthrough 1 Oct).",
+              "quote_verified": true
+            }
+          ],
+          "mutuality": {
+            "applies": true,
+            "one_sided_clauses": [
+              {
+                "clause_ref": "1.2",
+                "favours": "FinServe Capital",
+                "quote": "disclosed or made available by or on behalf of the Company to the Recipient or its Representatives",
+                "why": "Only FinServe's information is protected, despite the title and Recital B describing a mutual exchange.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "2.1",
+                "favours": "FinServe Capital",
+                "quote": "The Recipient shall:",
+                "why": "All use and protection obligations bind AtliQ only.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "2.2",
+                "favours": "FinServe Capital",
+                "quote": "The Recipient shall not, without the Company's prior written consent, disclose to any person the fact that discussions are taking place",
+                "why": "Only AtliQ must keep the discussions confidential.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "4.1",
+                "favours": "FinServe Capital",
+                "quote": "the Company shall be free to use Residuals for any purpose",
+                "why": "Only FinServe gets residuals rights, including over AtliQ's ideas and know-how.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "5.1",
+                "favours": "FinServe Capital",
+                "quote": "On the Company's written request, the Recipient shall promptly",
+                "why": "Return and destruction run one way only.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "6.2",
+                "favours": "FinServe Capital",
+                "quote": "shall notify the Company of any personal data breach within six (6) hours.",
+                "why": "Only AtliQ has data protection and breach-notice duties.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "7.2",
+                "favours": "FinServe Capital",
+                "quote": "The obligations of the Recipient under this Agreement shall survive termination and shall continue in perpetuity.",
+                "why": "Only AtliQ's obligations survive.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "8.1",
+                "favours": "FinServe Capital",
+                "quote": "provide services similar to those contemplated by the Proposed Transaction to any Competitor.",
+                "why": "A non-compete on AtliQ only, with no restriction on FinServe.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "8.2",
+                "favours": "FinServe Capital",
+                "quote": "directly or indirectly solicit, hire or engage any employee or consultant of the Company.",
+                "why": "FinServe can freely hire AtliQ staff; AtliQ cannot hire FinServe's.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "9.3",
+                "favours": "FinServe Capital",
+                "quote": "No licence under any intellectual property right of the Company is granted by this Agreement.",
+                "why": "Only FinServe's IP is protected.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "10.1",
+                "favours": "FinServe Capital",
+                "quote": "the Company shall be entitled to injunctive relief and specific performance",
+                "why": "Only FinServe gets equitable remedies.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "10.2",
+                "favours": "FinServe Capital",
+                "quote": "The Recipient shall indemnify the Company for all losses",
+                "why": "Uncapped indemnity from AtliQ only.",
+                "quote_verified": true
+              },
+              {
+                "clause_ref": "11.3",
+                "favours": "FinServe Capital",
+                "quote": "The Recipient may not assign this Agreement. The Company may assign it to any Affiliate.",
+                "why": "Assignment rights for FinServe only.",
+                "quote_verified": true
+              }
+            ]
+          },
+          "suggested_next_step": "escalate",
+          "next_step_reason": "Escalate. There is a register conflict: the Clause 8.1 non-compete appears to cover the live Trustline NBFC engagement, and possibly PayTrack. The rules engine also flags regulated financial customer data (RBI/SEBI-regulated lender, DPDP Act), and Clause 10.2 is an uncapped one-way indemnity. Deal value is not stated, so the USD 100,000 test for uncapped liability could not be applied, but the first two triggers apply regardless. The document is labelled mutual but is substantially one-way. The 1 October walkthrough creates time pressure similar to the Meridian NDA. This is a suggestion only; the decision rests with the reviewer.",
+          "clauses_to_push_on": [
+            "8.1: delete the non-compete (it appears to cover live Trustline NBFC work and possibly PayTrack); at minimum carve out existing clients and limit it to use of FinServe information",
+            "1.2 / 2.1 / 2.2 / 5.1 / 9.3 / 10.1: make the NDA genuinely mutual so AtliQ's architecture and pricing are protected (GlobalMart precedent)",
+            "4.1: delete Residuals or make it mutual and narrow",
+            "10.2: delete the indemnity, or make it mutual and capped",
+            "3.1: add an independent-development exception and soften the 'contemporaneous written evidence' standard",
+            "8.2: make it mutual, limit to staff involved in the discussions, shorten from 24 months, solicitation only (not hiring), with a general-advertisement carve-out",
+            "7.2: replace 'in perpetuity' with a fixed survival period (perpetual only for personal data / trade secrets) and make clear Clause 8 does not survive in perpetuity",
+            "6.2: run the 6-hour breach notice from becoming aware, and limit personal data shared at the evaluation stage",
+            "3.2: add 'to the extent legally permitted' to the prior-notice requirement",
+            "11.3: make assignment mutual",
+            "2.1(c): obtain FinServe's information-security policy before signing"
+          ],
+          "not_checked": [
+            "FinServe's information-security policy referenced in 2.1(c) (not provided)",
+            "FinServe's Affiliates and their product lines, needed to judge who is a 'Competitor' under 1.5 and whose staff are covered by 8.2",
+            "Whether Trustline NBFC and PayTrack offer 'products substantially similar' to FinServe's (needs a human judgement on both companies' products)",
+            "Full Trustline and PayTrack MSAs beyond the register extracts, e.g. renewal or follow-on SOW plans",
+            "AtliQ's sales pipeline with other Indian banks, NBFCs, wealth managers, brokers or fintechs (not on the register)",
+            "What data FinServe intends to share at the 1 October walkthrough, and whether it includes customer personal data (RBI outsourcing / DPDP Act; confirm with counsel)",
+            "Emails or calls between Arjun Mehta and Karandeep/Bhavin about the deal or this draft",
+            "Deal value (not stated), so the USD 100,000 uncapped-liability threshold could not be applied",
+            "Authority of FinServe's Head of Strategy to sign for FinServe and its Affiliates",
+            "Negotiation history not reconstructed by Jay (Sunrise, DataNest, Orbit, Seaside, older NDAs)",
+            "Insurance cover for an uncapped indemnity or data breach (no certificate reviewed)"
+          ],
+          "output_filter_hits": 0,
+          "unverified_quotes": 0
+        },
+        "usage": {
+          "input_tokens": 26535,
+          "output_tokens": 14605,
+          "usd": 0.3982
+        },
+        "elapsed_ms": 124669
+      }
+    },
+    {
+      "id": "2026-09-26_kriti_data_labs_subcontractor_agreement_draft",
+      "scenario": "AtliQ's own paper unfair to a 12-person agency",
+      "pass": false,
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.\"},\"request_id\":\"req_011CftE31C3fKG4PtGmx8MSp\"}"
+    },
+    {
+      "id": "2026-09-10_harrington_health_msa_draft",
+      "scenario": "Healthcare deal with documents missing (BAA chain, insurance gap)",
+      "pass": false,
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.\"},\"request_id\":\"req_011CftE33f8B9pHanPaFoEVf\"}"
+    },
+    {
+      "id": "2026-09-27_loopmart_mutual_nda_draft",
+      "scenario": "The clean one: should not raise a conflict",
+      "pass": true,
+      "result": {
+        "id": "2026-09-27_loopmart_mutual_nda_draft",
+        "title": "MUTUAL NON-DISCLOSURE AGREEMENT",
+        "facts": {
+          "document_type": "NDA",
+          "parties": [
+            "LoopMart Retail Private Limited",
+            "AtliQ Technologies Private Limited"
+          ],
+          "atliq_entity_named": "AtliQ Technologies Pvt Ltd",
+          "counterparty": "LoopMart Retail Private Limited",
+          "counterparty_country": "India",
+          "governing_law": "India",
+          "courts_or_arbitration": "Courts at Bengaluru (exclusive jurisdiction)",
+          "currency": "not stated",
+          "value_usd_estimate": null,
+          "data_types": [
+            "other personal data"
+          ],
+          "documents_referenced": [
+            "Digital Personal Data Protection Act, 2023",
+            "Companies Act, 2013"
+          ],
+          "is_atliq_paper": false,
+          "is_labelled_mutual": true,
+          "cyber_insurance_required_usd": null,
+          "payment_days": null,
+          "deal_category": "nda"
+        },
+        "rules": {
+          "region": "India",
+          "expected_entity": "AtliQ Technologies Pvt Ltd",
+          "findings": [
+            {
+              "check": "entity",
+              "status": "ok",
+              "text": "AtliQ Technologies Pvt Ltd is the expected entity for a India counterparty."
+            },
+            {
+              "check": "governing law",
+              "status": "ok",
+              "text": "Governing law (India) matches the signing entity's home jurisdiction."
+            },
+            {
+              "check": "paperwork",
+              "status": "ok",
+              "text": "Documents expected for a \"nda\" deal appear to be referenced."
+            }
+          ]
+        },
+        "review": {
+          "summary": "LoopMart Retail Private Limited (India, retail) has sent its standard two-way NDA ahead of a possible customer analytics and demand-forecasting engagement. The NDA is with AtliQ Technologies Pvt Ltd. Obligations are worded for whichever party receives information, so they bind both sides equally. Governing law is India, with Bengaluru courts. The rules engine found the entity, governing law and paperwork as expected. The NDA has no non-compete, non-solicit, exclusivity, pricing or IP transfer. Clause 8.2 expressly leaves both parties free to work with third parties. It also allows disclosure to subcontractors, so it does not repeat the restrictions AtliQ accepted in the Meridian NDA. One item is for a human to judge: Clause 5 contemplates sharing personal data (the Purpose covers 'sales and customer data'). It requires DPDP Act compliance but sets no breach-notice timeframe. You may want to clarify what customer data LoopMart will share at this stage. Two placeholders need filling: the Effective Date and AtliQ's signature block. No register conflicts were found. Note for any later engagement (not this NDA): retail analytics pricing will be subject to the Crestline MFN (R-004), and any platform choice may touch the CloudSpan exclusivity (R-030).",
+          "register_conflicts": [],
+          "no_conflicts_statement": "No conflicts found against the 49 commitments on the register",
+          "clauses": [
+            {
+              "clause_ref": "Preamble / Parties",
+              "type": "Parties and entity",
+              "plain_english": "The NDA is between LoopMart Retail Private Limited (Bengaluru) and AtliQ Technologies Private Limited (Pune). AtliQ's CIN and GSTIN are stated, and the Effective Date is left blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "ATLIQ TECHNOLOGIES PRIVATE LIMITED, a company incorporated under the Companies Act, 2013 (CIN U72900MH2019PTC321456; GSTIN 27AAKCA4821F1Z3), having its registered office at 4th Floor, Baner Business Bay, Pune 411045, Maharashtra, India",
+              "reason": "The entity, CIN, GSTIN and address match the finance fact sheet. The rules engine confirms Pvt Ltd is the correct entity for an Indian counterparty. The Effective Date ('made on ____________ 2026') must be filled in at signing.",
+              "past_positions": "Karandeep checklist (2024): 'gov law → ours (India for Pvt Ltd, US for Inc)'. The entity and law are aligned here.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "1.1",
+              "type": "Purpose",
+              "plain_english": "The NDA covers discussions about AtliQ building a customer analytics and demand-forecasting solution for LoopMart's stores and online storefront. Either side may share information for that purpose.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Parties intend to discuss a possible engagement for AtliQ to build a customer analytics and demand-forecasting solution for LoopMart's stores and online storefront (the \"Purpose\"). Each Party may disclose Confidential Information to the other for the Purpose.",
+              "reason": "The NDA itself creates no commercial commitment. Three register entries matter for any follow-on engagement:\n- **R-004 (Crestline MFN, live to 31 July 2027):** covers rates for 'substantially similar services' (analytics) offered to any customer.\n- **R-030 (CloudSpan exclusivity, India):** applies if AtliQ would act as implementation, reseller or referral partner for a competing cloud data platform.\n- **R-015 / R-047 (Al Noor):** hospitality-only, so not relevant to retail.\n\nNone of these is triggered by this NDA.",
+              "past_positions": "No prior LoopMart history. Acme Retail (India, Mar 2025) is the nearest retail precedent and was signed on Indian law.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "2.1",
+              "type": "Definition of Confidential Information",
+              "plain_english": "Confidential Information is any non-public information either side shares about the Purpose that is marked or obviously confidential. It expressly includes customer data, pricing, solution designs, source code and methodologies.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "including sales and customer data, supplier terms, pricing, product roadmaps, solution designs, source code and methodologies",
+              "reason": "The definition works both ways. It protects AtliQ's solution designs, source code and methodologies as well as LoopMart's data.",
+              "past_positions": "GlobalMart NDA (Mar 2026), Karandeep: 'We only sign mutual — we'll be sharing our architecture too.' This definition covers AtliQ's architecture and methodologies.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.1(a)-(d)",
+              "type": "Confidentiality obligations",
+              "plain_english": "The receiving side must:\n- use information only for the Purpose;\n- share it only with need-to-know employees, directors, advisers and subcontractors who are bound in writing;\n- take reasonable care;\n- promptly report any leak.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "disclose it only to its employees, directors, professional advisers and subcontractors who need to know it for the Purpose and are bound by written confidentiality obligations no less protective than this Agreement",
+              "reason": "These are standard obligations and apply to both sides. Subcontractors are expressly allowed, unlike Meridian Clause 3.1(b) (R-050), which limits disclosure to employees only. Freelancers can be used if they are under written confidentiality terms. The breach notice is 'promptly' with no fixed hours.",
+              "past_positions": "Meridian Healthcare NDA (Jul 2026): 'it's standard', and Karandeep signed within the hour with no changes. That NDA produced the employee-only restriction (R-050) and a 24-month non-solicit (R-049). Neither appears here.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "3.2",
+              "type": "Responsibility for recipients",
+              "plain_english": "Each side is answerable if the people it shared information with breach the NDA.",
+              "verdict": "fine",
+              "confidence": "low",
+              "quote": "Each Party is responsible for any breach of this Agreement by persons to whom it discloses Confidential Information.",
+              "reason": "This applies to both sides. The NDA has no liability cap, so ordinary Indian law on damages applies. It is not drafted as unlimited liability or a penalty, and no fee value attaches to an NDA. A human may still want to note this if AtliQ will pass LoopMart data to freelancers or subcontractors.",
+              "past_positions": "Karandeep checklist: 'liability → 1x fees. NOT unlimited' and 'NDAs → just sign if mutual'.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.1",
+              "type": "Exclusions",
+              "plain_english": "The obligations do not cover information that is public, already known, obtained lawfully from someone else, or independently developed.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "is independently developed by the Receiving Party without use of the Disclosing Party's Confidential Information",
+              "reason": "These are standard carve-outs and apply to both sides. The independent-development exclusion helps AtliQ keep building its own analytics tools.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "4.2",
+              "type": "Legally required disclosure",
+              "plain_english": "Either side may disclose information if the law or an authority requires it. It must give notice where allowed and disclose only what is required.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "The Receiving Party may disclose Confidential Information to the extent required by law or a competent authority, after giving the Disclosing Party prompt notice where legally permitted, and disclosing only what is required.",
+              "reason": "This is a standard compelled-disclosure clause and applies to both sides.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "5.1",
+              "type": "Personal data",
+              "plain_english": "If shared information includes personal data, the recipient may use it only for the Purpose and must comply with India's DPDP Act 2023.",
+              "verdict": "needs attention",
+              "confidence": "low",
+              "quote": "Where Confidential Information includes personal data, the Receiving Party shall process it only for the Purpose and in compliance with the Digital Personal Data Protection Act, 2023.",
+              "reason": "Clause 2.1 lists 'sales and customer data', so LoopMart may share shopper personal data during pre-sales discussions. This is a human judgement call, not a defect in the wording. Before signing, you may want to confirm:\n- whether personal data will actually be shared at NDA stage;\n- whether de-identified or sample data would be enough;\n- that AtliQ can meet DPDP obligations for it.\n\nThe clause sets no breach-notice timeframe, which is lighter than past commitments (Meridian 24h, R-051; Trustline 6h, R-055). The data type is 'other personal data', not health or payment data, so it was not treated as a regulated-data escalation trigger. A human should confirm that judgement.",
+              "past_positions": "Acme Retail MSA (Mar 2025) accepted similar DPDP processing wording (R-014). Meridian NDA (Jul 2026) accepted DPDP plus 24-hour notice without negotiation.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "6.1",
+              "type": "Return or destruction",
+              "plain_english": "Within 15 days of a written request, the recipient must return or destroy the other side's information. Back-ups and legally required copies are excepted but stay confidential.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Within fifteen (15) days of a written request by the Disclosing Party, the Receiving Party shall return or destroy the Disclosing Party's Confidential Information, except for copies held in automatic back-ups or required to be retained by law, which remain confidential.",
+              "reason": "This applies to both sides and includes a practical back-up exception. If personal data is shared, AtliQ will need to be able to destroy it within 15 days.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.1",
+              "type": "Term and termination",
+              "plain_english": "The NDA lasts two years. Either side can end it early on 30 days' written notice.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement remains in force for two (2) years from the Effective Date. Either Party may terminate it earlier on thirty (30) days' written notice.",
+              "reason": "Both sides have the same termination right.",
+              "past_positions": "The Meridian NDA had a 3-year term. This one is shorter.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "7.2",
+              "type": "Survival",
+              "plain_english": "The confidentiality, personal data and return obligations continue for three years after the NDA ends.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Each Party's obligations under Clauses 3 to 6 continue for three (3) years after expiry or termination of this Agreement.",
+              "reason": "This survival period is fixed and applies to both sides. On full term, the obligations run to about five years after signing. A human may wish to diarise the end date.",
+              "past_positions": "Meridian NDA: obligations survive 3 years after expiry (R-050/R-051). This matches.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.1",
+              "type": "Ownership / no licence",
+              "plain_english": "Each side keeps ownership of its own information. No licence is granted beyond use for the Purpose.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Confidential Information remains the property of the Disclosing Party. No licence is granted except the limited right to use it for the Purpose.",
+              "reason": "This protects AtliQ's methodologies and tools equally with LoopMart's data. No IP is assigned.",
+              "past_positions": "Karandeep checklist: 'IP → client owns what we build for them, we keep our own stuff'.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "8.2",
+              "type": "No obligation / freedom to work with others",
+              "plain_english": "Neither side must sign a further deal. Both stay free to work with third parties as long as they do not misuse the other's information.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party is obliged to enter into any further agreement. Each Party remains free to work with third parties, provided it does not use or disclose the other Party's Confidential Information.",
+              "reason": "There is no non-compete or exclusivity, and this clause preserves AtliQ's freedom to serve other retail clients. It creates no new register-type restriction.",
+              "past_positions": "Contrast the Al Noor (R-015) and CloudSpan (R-030) restrictions, which Karandeep negotiated down. None is sought here.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "9.1",
+              "type": "Remedies",
+              "plain_english": "Either side, when it is the discloser, may seek a court injunction as well as damages.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Each Party acknowledges that damages may not be an adequate remedy for breach, and the Disclosing Party may seek injunctive relief in addition to other remedies available at law.",
+              "reason": "This is standard and applies to both sides. It says 'may seek', so it is not an automatic entitlement, and it contains no penalty or liquidated damages.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.1",
+              "type": "Entire agreement / amendment",
+              "plain_english": "This document is the whole agreement on confidentiality. Changes must be in writing and signed by both parties.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement is the entire agreement between the Parties on its subject matter and may be amended only in writing signed by both Parties.",
+              "reason": "This is standard boilerplate.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.2",
+              "type": "Assignment",
+              "plain_english": "Neither side can transfer the NDA without the other's written consent.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "Neither Party may assign this Agreement without the other Party's prior written consent.",
+              "reason": "This applies to both sides. It restricts assignment only, not subcontracting.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.3",
+              "type": "Governing law and jurisdiction",
+              "plain_english": "Indian law applies, and only the Bengaluru courts can hear disputes.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement is governed by the laws of India. The courts at Bengaluru shall have exclusive jurisdiction.",
+              "reason": "The rules engine confirms the governing law matches Pvt Ltd's home jurisdiction. The forum is courts in Bengaluru (LoopMart's city) rather than Pune or arbitration. That is a minor point for a human to accept or not.",
+              "past_positions": "Acme Retail (Mar 2025): Indian law, Mumbai arbitration. Karandeep checklist: 'gov law → ours (India for Pvt Ltd)'.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "10.4",
+              "type": "Execution",
+              "plain_english": "The NDA can be signed electronically and in separate copies.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "This Agreement may be executed electronically and in counterparts.",
+              "reason": "This is standard boilerplate.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            },
+            {
+              "clause_ref": "Signatures",
+              "type": "Signature block",
+              "plain_english": "Sania Sheikh (Founder and CEO) signs for LoopMart. AtliQ's name, designation and date are blank.",
+              "verdict": "fine",
+              "confidence": "high",
+              "quote": "For ATLIQ TECHNOLOGIES PRIVATE LIMITED Name: ______________________ Designation: ______________________",
+              "reason": "The fact sheet names Karandeep (CEO) as authorised signatory for Pvt Ltd. The block needs completing.",
+              "past_positions": "No specific precedent found.",
+              "quote_verified": true
+            }
+          ],
+          "mutuality": {
+            "applies": true,
+            "one_sided_clauses": []
+          },
+          "suggested_next_step": "negotiate",
+          "next_step_reason": "There are no register conflicts and no uncapped penalty, and the data type is general personal data, so there is no escalation trigger. The NDA is mutual throughout. One clause (5.1, personal data) is flagged for a human judgement call: clarify whether LoopMart customer personal data will be shared at NDA stage, and consider asking for de-identified or sample data. This is light-touch and could be resolved by email. The reviewer may reasonably decide it needs no change. This is a suggestion only.",
+          "clauses_to_push_on": [
+            "5.1 – confirm whether customer personal data will be shared pre-engagement; consider de-identified/sample data or agree a breach-notice approach",
+            "Preamble/Signatures – fill in Effective Date and AtliQ signatory (Karandeep, CEO)"
+          ],
+          "not_checked": [
+            "What data LoopMart actually intends to share during discussions (only the NDA text was reviewed)",
+            "Any emails, calls or proposal exchanged with Sania Sheikh / LoopMart before this draft",
+            "Pricing of any follow-on engagement against the Crestline MFN (R-004, live to 31 July 2027) – not in this NDA",
+            "Platform/partner choice for any follow-on solution against CloudSpan exclusivity in India (R-030) – not in this NDA",
+            "Whether any follow-on work would reuse materials owned by others (e.g. Rohan Iyer's Work Product used on Acme, R-023; Acme deliverables, R-012)",
+            "AtliQ's actual DPDP compliance capability (security controls, deletion within 15 days)",
+            "Register numbering gaps (e.g. R-007, R-019, R-032, R-040–R-042, R-052) and deals Jay did not reconstruct (Sunrise, DataNest, Orbit, Seaside, older NDAs) – the history may be incomplete",
+            "Expired entries not treated as live: Orbit non-compete R-001 (tail ended 30 June 2025) and non-solicit R-002 (ended 31 December 2024); neither is relevant to a retail NDA in any case"
+          ],
+          "output_filter_hits": 0,
+          "unverified_quotes": 0
+        },
+        "usage": {
+          "input_tokens": 24857,
+          "output_tokens": 9441,
+          "usd": 0.2882
+        },
+        "elapsed_ms": 83681
+      }
+    },
+    {
+      "id": "2026-09-21_blueorchid_hotels_pilot_agreement_draft",
+      "scenario": "Looks India-only (Jay: 'just India hotels I think') but Annexure B lists Dubai and Muscat properties: must conflict with Al Noor",
+      "pass": false,
+      "error": "400 {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"You have reached your specified API usage limits. You will regain access on 2026-11-01 at 00:00 UTC.\"},\"request_id\":\"req_011CftE35cww2HycoiZ1GY8n\"}"
+    }
+  ]
+}
