@@ -47,7 +47,7 @@ Optional: `REVIEW_MODEL=claude-sonnet-5-5` in the environment switches the model
 | `lib/pipeline.mjs` | Prompts, schemas, rules engine, quote verification, pricing. Shared by the API and the scripts. |
 | `data/` | The synthetic dataset (unchanged from the capstone pack), `rules.json`, `register.json`, test results. |
 | `scripts/` | `build_register.mjs`, `golden_test.mjs`, `build_contracts_index.mjs`. |
-| `src/` | React page: Review, Obligations register, Golden tests, How it works. |
+| `src/` | React page: Review, Obligations register, Golden tests, Evals vs PRD (the ten PRD eval dimensions against the stored golden run; `?tab=evals`), How it works. |
 
 ## Dataset notes
 
