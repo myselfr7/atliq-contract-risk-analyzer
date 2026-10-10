@@ -1,6 +1,6 @@
 // POST /api/review  { contractId } | { text, title }
 // Streams Server-Sent Events: progress, facts, rules, text (deltas), done, error.
-import { loadData, listContracts, makeClient, extractFacts, applyRules, reviewContract, verifyQuotes, priceUsage, MODEL } from "../lib/pipeline.mjs";
+import { loadData, listContracts, makeClient, extractFacts, applyRules, reviewContract, verifyQuotes, priceUsage, registerForPrompt, MODEL } from "../lib/pipeline.mjs";
 
 export const config = { supportsResponseStreaming: true, maxDuration: 300 };
 
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     send("facts", facts);
     const rulesOut = applyRules(facts, data.rules);
     send("rules", rulesOut);
-    send("progress", { stage: "reviewing clauses", ms: Date.now() - t0, register_entries: (data.register.entries || []).filter((e) => e.confirmed !== false).length });
+    send("progress", { stage: "reviewing clauses", ms: Date.now() - t0, register_entries: registerForPrompt(data.register).length });
     let chars = 0;
     const { review, usage: u2 } = await reviewContract(client, {
       contractText, title, data, facts, rulesOut,
