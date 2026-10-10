@@ -1,0 +1,60 @@
+{
+  "_comment": "Rules, no AI. Maintained by the PM with counsel's input. Every entry here is a flag for a human to check, never a statement of law. Source: atliq_entities.md, the capstone brief, Client Meeting 1 (7 Oct 2026), Harrington huddle.",
+  "entities": {
+    "AtliQ Technologies Pvt Ltd": {
+      "aliases": ["atliq technologies private limited", "atliq technologies pvt ltd", "atliq technologies pvt. ltd.", "pvt ltd", "private limited"],
+      "serves": ["India", "Middle East", "Europe", "UK", "Other"],
+      "home_law": ["India"],
+      "home_courts": ["Mumbai", "Pune", "India"],
+      "currencies": ["INR", "USD", "EUR"]
+    },
+    "AtliQ Inc": {
+      "aliases": ["atliq inc", "atliq, inc.", "atliq inc.", "delaware corporation"],
+      "serves": ["United States"],
+      "home_law": ["United States", "Delaware", "New Jersey", "Texas", "Illinois", "New York", "California"],
+      "home_courts": ["United States"],
+      "currencies": ["USD"]
+    }
+  },
+  "country_to_region": {
+    "United States": "United States", "USA": "United States", "US": "United States",
+    "India": "India",
+    "United Arab Emirates": "Middle East", "UAE": "Middle East", "Dubai": "Middle East", "Saudi Arabia": "Middle East", "Oman": "Middle East", "Qatar": "Middle East", "Kuwait": "Middle East", "Bahrain": "Middle East",
+    "Germany": "Europe", "France": "Europe", "Netherlands": "Europe", "Spain": "Europe", "Italy": "Europe",
+    "United Kingdom": "UK", "UK": "UK", "England": "UK",
+    "Singapore": "Other"
+  },
+  "expected_entity_by_region": {
+    "United States": "AtliQ Inc",
+    "India": "AtliQ Technologies Pvt Ltd",
+    "Middle East": "AtliQ Technologies Pvt Ltd",
+    "Europe": "AtliQ Technologies Pvt Ltd",
+    "UK": "AtliQ Technologies Pvt Ltd",
+    "Other": "AtliQ Technologies Pvt Ltd"
+  },
+  "regulated": {
+    "patient data": { "region_hint": "United States", "flag": "Patient data in a US deal usually needs a HIPAA Business Associate Agreement (BAA), matching BAA or equivalent terms for every subcontractor or freelancer who touches the data, and no data transfer before those are signed. Confirm with counsel." },
+    "personal data (EU/UK)": { "region_hint": "Europe", "flag": "EU or UK personal data usually needs a GDPR data processing agreement (DPA) with transfer terms for processing in India. Confirm with counsel." },
+    "guest data": { "region_hint": "Middle East", "flag": "Guest or customer personal data of a Gulf client: check local data-protection and residency requirements (UAE PDPL, KSA PDPL). Confirm with counsel." },
+    "financial data": { "region_hint": "India", "flag": "Financial customer data in India: check the client's regulator requirements (RBI outsourcing rules for banks and NBFCs) and India's DPDP Act. Confirm with counsel." }
+  },
+  "documents_by_deal": {
+    "client services": ["NDA (recommended before scoping)", "Master services agreement or services agreement", "Statement of work"],
+    "client services with patient data (US)": ["NDA", "Master services agreement", "HIPAA Business Associate Agreement", "Subcontractor BAA or equivalent for every freelancer or agency touching the data", "Intercompany BAA covering the Pune delivery team"],
+    "client services with EU/UK personal data": ["NDA", "Master services agreement", "GDPR data processing agreement"],
+    "partnership": ["Partnership agreement", "Check for exclusivity, non-compete and referral terms against the register"],
+    "vendor or subcontractor": ["Subcontractor or vendor agreement", "NDA", "Flow-down of any client data terms (BAA, DPA) the subcontractor must match"],
+    "freelancer": ["Contractor agreement", "NDA", "Flow-down of any client data terms the freelancer must match"],
+    "nda": ["NDA only; check it is mutual if labelled mutual"]
+  },
+  "numeric_checks": {
+    "cyber_insurance_held_usd": 1000000,
+    "payment_days_atliq_prefers": 30,
+    "payment_days_atliq_max": 45,
+    "liability_cap_atliq_prefers": "1x fees"
+  },
+  "escalation": {
+    "deal_value_usd": 100000,
+    "note": "Suggest escalation to counsel when a register conflict is found, a regulated data type is present, or liability or penalties are uncapped on a deal at or above this value. Threshold set by Karandeep, editable."
+  }
+}
