@@ -3,7 +3,9 @@ import React, { useEffect, useMemo, useState } from "react";
 const LABEL = "AI-generated draft review. Not legal advice. A person decides.";
 
 export default function App() {
-  const [tab, setTab] = useState("review");
+  // ?tab=review|register|golden|about opens that tab directly (demo links and screenshots)
+  const initialTab = new URLSearchParams(window.location.search).get("tab") || "review";
+  const [tab, setTab] = useState(["review", "register", "golden", "about"].includes(initialTab) ? initialTab : "review");
   return (
     <>
       <header>
@@ -65,6 +67,26 @@ function Review() {
   useEffect(() => { fetch("/contracts.json").then((r) => r.json()).then((l) => { setContracts(l); if (l[0]) setSel(l[0].id); }).catch(() => {}); }, []);
   const current = useMemo(() => contracts.find((c) => c.id === sel), [contracts, sel]);
 
+  // Replay mode: ?replay=<contract id> renders the saved golden-test result through the same page,
+  // instantly and at no cost. Used for demos and screenshots. ?focus=brief|facts|conflicts|clauses|mutuality|notchecked|decision shows one card.
+  const params = useMemo(() => new URLSearchParams(window.location.search), []);
+  const focus = params.get("focus");
+  useEffect(() => {
+    const id = params.get("replay");
+    if (!id) return;
+    fetch("/golden_results.json").then((r) => r.json()).then((g) => {
+      const hit = (g.results || []).find((x) => x.id === id && x.result);
+      if (hit) { setSel(id); setState((s) => ({ ...s, result: { ...hit.result, label: LABEL }, stage: "replayed from saved test run" })); }
+    }).catch(() => {});
+  }, [params]);
+  useEffect(() => {
+    if (!focus) return;
+    const st = document.createElement("style");
+    st.textContent = `.card[data-key]:not([data-key="${focus}"]) { display: none } .card[data-key="pick"] { display: none }`;
+    document.head.appendChild(st);
+    return () => st.remove();
+  }, [focus]);
+
   async function go() {
     setState({ running: true, stage: "starting", chars: 0, facts: null, rules: null, result: null, error: null, started: Date.now() });
     setOverride({ step: "", reason: "" });
@@ -92,7 +114,7 @@ function Review() {
   const r = state.result;
   return (
     <>
-      <div className="card">
+      <div className="card" data-key="pick">
         <h2>1. Choose a contract</h2>
         <div className="row">
           <label><input type="radio" checked={mode === "pick"} onChange={() => setMode("pick")} /> From the incoming queue (15 synthetic drafts)</label>
@@ -119,7 +141,7 @@ function Review() {
 
       {r && (
         <>
-          <div className="card">
+          <div className="card" data-key="brief">
             <div className="label">{r.label || LABEL}</div>
             <h2>Review brief: {r.title}</h2>
             <p><b>Suggested next step:</b> <span className={`pill ${r.review.suggested_next_step}`}>{r.review.suggested_next_step}</span> &nbsp; {r.review.next_step_reason}</p>
@@ -130,7 +152,7 @@ function Review() {
 
           <FactsCard facts={r.facts} rules={r.rules} />
 
-          <div className="card">
+          <div className="card" data-key="conflicts">
             <h2>2. Existing commitments (register check)</h2>
             {r.review.register_conflicts.length === 0 ? (
               <p><span className="pill ok">no conflict found</span> &nbsp; {r.review.no_conflicts_statement}</p>
@@ -149,7 +171,7 @@ function Review() {
             )}
           </div>
 
-          <div className="card">
+          <div className="card" data-key="clauses">
             <h2>3. Clause by clause ({r.review.clauses.length} clauses)</h2>
             <table><thead><tr><th>Ref</th><th>Type</th><th>In plain English</th><th>Verdict</th><th>Quoted text</th><th>Reason and past positions</th></tr></thead><tbody>
               {r.review.clauses.map((c, i) => (
@@ -165,7 +187,7 @@ function Review() {
             </tbody></table>
           </div>
 
-          <div className="card">
+          <div className="card" data-key="mutuality">
             <h2>4. Mutuality (both directions)</h2>
             {!r.review.mutuality.applies ? <p className="muted">Not applicable to this document type.</p> : r.review.mutuality.one_sided_clauses.length === 0 ? <p><span className="pill ok">balanced</span> No one-sided clauses found.</p> : (
               <table><thead><tr><th>Clause</th><th>Favours</th><th>Quoted text</th><th>Why one-sided</th></tr></thead><tbody>
@@ -174,12 +196,12 @@ function Review() {
             )}
           </div>
 
-          <div className="card">
+          <div className="card" data-key="notchecked">
             <h2>5. What was not checked</h2>
             <ul>{r.review.not_checked.map((n, i) => <li key={i}>{n}</li>)}</ul>
           </div>
 
-          <div className="card">
+          <div className="card" data-key="decision">
             <h2>6. Your decision (human in the loop)</h2>
             <p className="muted">The assistant suggested <b>{r.review.suggested_next_step}</b>. Confirm it or override it. Overrides are recorded with a reason; nothing is signed or sent from here.</p>
             <div className="row">
@@ -198,7 +220,7 @@ function Review() {
 
 function FactsCard({ facts, rules }) {
   return (
-    <div className="card">
+    <div className="card" data-key="facts">
       <h2>Header facts and rules check (no AI in the rules)</h2>
       <div className="grid2">
         <div>
