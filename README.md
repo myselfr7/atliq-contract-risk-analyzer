@@ -30,7 +30,7 @@ npm install
 echo ANTHROPIC_API_KEY=sk-ant-... > .env          # never commit this file
 node scripts/build_contracts_index.mjs          # public/contracts.json for the picker
 node scripts/build_register.mjs                 # one-time: extracts the register (measured $0.96 at list prices; resumable)
-npm run test:golden                             # runs the 8 trap scenarios (measured about $0.40 per contract, about $3 per run)
+npm run test:golden                             # runs the 8 trap scenarios (measured $0.09 to $0.23 per contract on Claude Sonnet 5, about $1.35 per run)
 node scripts/dev_server.mjs                     # local test server on :3000 serving dist/ and /api/review (no extra tools)
 npx vercel dev                                  # local site + /api/review (plain `vite` does not serve the API)
 ```
