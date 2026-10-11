@@ -10,7 +10,7 @@ Built by Rahul for the Codebasics AI PM capstone. All data is synthetic. Not leg
 
 1. **Header facts** are extracted from the contract into a fixed schema (parties, AtliQ entity, country, law, courts, data types, documents referenced, insurance, payment days).
 2. **Rules, no AI** (`data/rules.json`, `lib/pipeline.mjs` → `applyRules`): entity vs country, governing law vs the entity's home law, regulated data types, documents the deal type needs, numeric gaps such as insurance. Every regulatory point is a flag to confirm with counsel.
-3. **Register check**: the deal is compared with the confirmed obligations register (`data/register.json`, built once from the 17 signed contracts). Conflicts are reported only with both clauses quoted.
+3. **Register check**: the deal is compared with the confirmed obligations register (`data/register.json`, built once from the 17 signed contracts). Conflicts are reported only with both clauses quoted. Expired restrictions that would otherwise have applied are listed as checked, so the reviewer can see they were considered.
 4. **Clause by clause**: every clause gets a type, a plain-English line, a verdict (fine / needs attention / conflict), the quoted text, and past positions from the negotiation history, shown as history, never policy.
 5. **Mutuality**: clauses labelled mutual, and AtliQ's own paper, are checked for one-sidedness in both directions.
 6. **Suggested next step**: sign, negotiate or escalate. A suggestion only; the reviewer confirms or overrides with a reason, and the override is recorded.

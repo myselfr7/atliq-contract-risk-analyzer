@@ -192,6 +192,9 @@ function Review() {
                 ))}
               </tbody></table>
             )}
+            {r.review.expired_restrictions_checked?.length > 0 && (
+              <p className="muted"><b>Expired restrictions checked, no longer binding:</b> {r.review.expired_restrictions_checked.join("; ")}</p>
+            )}
           </div>
 
           <div className="card" data-key="clauses">
