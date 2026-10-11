@@ -387,7 +387,9 @@ function evalRows(res) {
       status: "not measured", evidence: "Same 100 rated clauses as above." },
     { dim: "Groundedness", threshold: "100% of findings carry a quote matching the source text; 0 findings reference text in no document", blocker: true,
       status: unverified === 0 ? "met" : "partly met",
-      evidence: `${quotes - unverified} of ${quotes} quotes matched the source in code (${pct(quotes - unverified, quotes)}%). ${unverified} flagged by the matcher; each checked by hand and found to be genuine text joined with an ellipsis, so 0 invented references.` },
+      evidence: unverified === 0
+        ? `All ${quotes} quotes in the stored run matched the source word for word in code. A literal "not found" is not counted as a quote; a quote that does not match is shown as unverified in the brief for the reviewer to check.`
+        : `${quotes - unverified} of ${quotes} quotes matched the source word for word in code (${pct(quotes - unverified, quotes)}%). ${unverified} did not and are shown as unverified in the brief for the reviewer to check. A literal "not found" is not counted as a quote.` },
     { dim: "Entity and rules accuracy", threshold: "Entity, law and courts check and required-documents list correct on all 32 contracts", blocker: true,
       status: rulesCaught === 2 && falseEntity === 0 ? "met on 8" : "not met",
       evidence: `${rulesCaught} of 2 rule traps caught (TravelHub wrong entity; Harrington missing BAA chain); ${falseEntity} false entity flags on the other ${ok.length - 2} golden contracts. The rules run with no AI. 24 of 32 contracts still need a hand-checked answer key.` },

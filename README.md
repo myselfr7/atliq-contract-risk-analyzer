@@ -30,7 +30,7 @@ npm install
 echo ANTHROPIC_API_KEY=sk-ant-... > .env          # never commit this file
 node scripts/build_contracts_index.mjs          # public/contracts.json for the picker
 node scripts/build_register.mjs                 # one-time: extracts the register (measured $0.96 at list prices; resumable)
-npm run test:golden                             # runs the 8 trap scenarios (measured $0.09 to $0.23 per contract on Claude Sonnet 5, about $1.35 per run)
+npm run test:golden                             # runs the 8 trap scenarios (measured $0.09 to $0.19 per contract on Claude Sonnet 5, about $1.25 per run)
 node scripts/dev_server.mjs                     # local test server on :3000 serving dist/ and /api/review (no extra tools)
 npx vercel dev                                  # local site + /api/review (plain `vite` does not serve the API)
 ```
@@ -58,9 +58,9 @@ The dataset is the capstone pack as supplied: 15 incoming drafts, 17 signed cont
 | | Value |
 |---|---|
 | Register build, one time | 17 contracts, 56 entries, 76k tokens in / 34k out, $0.96 (built on the first model, before the switch to Sonnet 5) |
-| One review, Claude Sonnet 5 | 25k to 33k tokens in, 9k to 15k out, $0.09 to $0.23 (average $0.17), 45 to 142 seconds |
-| Golden set | 8 of 8 scenarios pass on Sonnet 5, $1.33 per run. The first run on the earlier model scored 5 of 8: two reviews hit an output limit since raised, and one "failure" was the test's own expectation being wrong (BlueOrchid's property list includes Dubai and Muscat, so the Al Noor non-compete applies) |
-| Quotes checked in code | 205 of 208 quotes matched the source text; the 3 flagged were checked by hand and are genuine text joined with an ellipsis. 0 forbidden phrases |
+| One review, Claude Sonnet 5 | 25k to 39k tokens in, 4k to 12k out, $0.09 to $0.19 (average $0.16), 41 to 110 seconds |
+| Golden set | 8 of 8 scenarios pass on Sonnet 5, $1.25 per run. The first run on the earlier model scored 5 of 8: two reviews hit an output limit since raised, and one "failure" was the test's own expectation being wrong (BlueOrchid's property list includes Dubai and Muscat, so the Al Noor non-compete applies) |
+| Quotes checked in code | 203 of 203 quotes in the final run matched the source word for word; 0 forbidden phrases. An earlier run flagged 3: a literal "not found" that was being counted as a quote (the verifier now ignores it), a paraphrase of the contract's wording, and a register entry quoted differently from the stored clause. Mismatches are shown as unverified in the brief, not dropped. |
 
 The cost estimate made before the build assumed $0.15 per review. The register and the clause tables came out larger than estimated; the cost sheet was updated with the measured numbers and the $1 per review ceiling still holds.
 
