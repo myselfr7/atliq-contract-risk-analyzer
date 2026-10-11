@@ -84,7 +84,7 @@ function Review() {
     if (!id) return;
     fetch("/golden_results.json").then((r) => r.json()).then((g) => {
       const hit = (g.results || []).find((x) => x.id === id && x.result);
-      if (hit) { setSel(id); setState((s) => ({ ...s, result: { ...hit.result, label: LABEL }, stage: "replayed from saved test run" })); }
+      if (hit) { setSel(id); setState((s) => ({ ...s, result: { ...hit.result, label: LABEL, model: hit.result.model || g.model }, stage: "replayed from saved test run" })); }
     }).catch(() => {});
   }, [params]);
   useEffect(() => {
@@ -107,6 +107,8 @@ function Review() {
         if (ev === "text") setState((s) => ({ ...s, chars: p.chars }));
       });
       setState((s) => ({ ...s, running: false, stage: "done", result }));
+      // The brief and the decision box sit at the top of the page; bring the reviewer there when the review lands.
+      setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 50);
     } catch (e) {
       setState((s) => ({ ...s, running: false, error: e.message }));
     }
@@ -159,6 +161,18 @@ function Review() {
             <p className="muted">Model {r.model} · {r.usage.input_tokens.toLocaleString()} tokens in, {r.usage.output_tokens.toLocaleString()} out · ${r.usage.usd} at list prices · {(r.elapsed_ms / 1000).toFixed(0)} s · quotes checked against the source text in code: {r.review.unverified_quotes} unverified · forbidden phrases filtered: {r.review.output_filter_hits}</p>
           </div>
 
+          <div className="card decide" data-key="decision">
+            <h2>Your decision (a person decides)</h2>
+            <p className="muted">The assistant suggested <b>{r.review.suggested_next_step}</b>. Read the sections below, then confirm it or override it here. Overrides are recorded with a reason; nothing is signed or sent from here.</p>
+            <div className="row">
+              <select value={override.step} onChange={(e) => setOverride({ ...override, step: e.target.value })}>
+                <option value="">Choose...</option><option value="sign">Sign</option><option value="negotiate">Negotiate</option><option value="escalate">Escalate to counsel</option><option value="reject">Reject</option>
+              </select>
+              <input style={{ minWidth: 380 }} placeholder="Reason (required if different from the suggestion)" value={override.reason} onChange={(e) => setOverride({ ...override, reason: e.target.value })} />
+              <button className="primary" disabled={!override.step || (override.step !== r.review.suggested_next_step && !override.reason)} onClick={saveOverride}>Record decision</button>
+            </div>
+          </div>
+
           <FactsCard facts={r.facts} rules={r.rules} />
 
           <div className="card" data-key="conflicts">
@@ -171,8 +185,8 @@ function Review() {
                   <tr key={i} className={c.severity === "conflict" ? "v-conflict" : "v-attention"}>
                     <td><span className={`pill ${c.severity === "conflict" ? "conflict" : "attention"}`}>{c.severity}</span></td>
                     <td>{c.register_id}</td>
-                    <td><span className="quote">{c.incoming_clause_quote}</span>{!c.incoming_quote_verified && <span className="muted"> (quote not matched in source)</span>}</td>
-                    <td><span className="quote">{c.register_clause_quote}</span>{!c.register_quote_verified && <span className="muted"> (quote not matched in register)</span>}</td>
+                    <td><Quote text={c.incoming_clause_quote} verified={c.incoming_quote_verified} where="this contract" /></td>
+                    <td><Quote text={c.register_clause_quote} verified={c.register_quote_verified} where="the register" /></td>
                     <td>{c.explanation}</td>
                   </tr>
                 ))}
@@ -189,7 +203,7 @@ function Review() {
                   <td>{c.type}</td>
                   <td>{c.plain_english}</td>
                   <td><span className={`pill ${c.verdict.replace("needs ", "")}`}>{c.verdict}</span>{c.confidence === "low" && <> <span className="pill low">low confidence</span></>}</td>
-                  <td><span className="quote">{c.quote}</span>{!c.quote_verified && <span className="muted">not matched in source text</span>}</td>
+                  <td><Quote text={c.quote} verified={c.quote_verified} where="this contract" /></td>
                   <td>{c.reason}{c.past_positions && c.past_positions !== "none" && <div className="muted"><b>History:</b> {c.past_positions}</div>}</td>
                 </tr>
               ))}
@@ -210,21 +224,31 @@ function Review() {
             <ul>{r.review.not_checked.map((n, i) => <li key={i}>{n}</li>)}</ul>
           </div>
 
-          <div className="card" data-key="decision">
-            <h2>6. Your decision (human in the loop)</h2>
-            <p className="muted">The assistant suggested <b>{r.review.suggested_next_step}</b>. Confirm it or override it. Overrides are recorded with a reason; nothing is signed or sent from here.</p>
-            <div className="row">
-              <select value={override.step} onChange={(e) => setOverride({ ...override, step: e.target.value })}>
-                <option value="">Choose...</option><option value="sign">Sign</option><option value="negotiate">Negotiate</option><option value="escalate">Escalate to counsel</option><option value="reject">Reject</option>
-              </select>
-              <input style={{ minWidth: 380 }} placeholder="Reason (required if different from the suggestion)" value={override.reason} onChange={(e) => setOverride({ ...override, reason: e.target.value })} />
-              <button className="primary" disabled={!override.step || (override.step !== r.review.suggested_next_step && !override.reason)} onClick={saveOverride}>Record decision</button>
-            </div>
-          </div>
         </>
       )}
+      <TopButton />
     </>
   );
+}
+
+// A quoted clause. When the model could not find supporting text it writes "not found" in the quote field;
+// show that as a plain statement instead of a code-font "not found" plus a checker warning.
+function Quote({ text, verified, where }) {
+  const t = String(text || "").trim();
+  if (!t || /^not found\.?$/i.test(t)) return <span className="muted"><i>No matching clause in {where}; nothing to quote.</i></span>;
+  return <><span className="quote">{t}</span>{!verified && <span className="muted"> (not matched word for word in {where})</span>}</>;
+}
+
+// A "back to top" button that appears once the reviewer has scrolled down the long clause table.
+function TopButton() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 400);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  if (!show) return null;
+  return <button className="totop" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} title="Back to the brief and the decision box">&#8593; Top</button>;
 }
 
 // Shown while a review runs. The header facts and the rules table arrive in seconds; the clause-by-clause
