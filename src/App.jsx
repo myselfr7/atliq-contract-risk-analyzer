@@ -15,7 +15,7 @@ export default function App() {
             <button key={k} className={tab === k ? "active" : ""} onClick={() => setTab(k)}>{l}</button>
           ))}
         </nav>
-        <span className="muted" style={{ color: "#cfe0f3" }}>Prototype on synthetic data. Capstone 2, Codebasics AI PM Cohort.</span>
+        <span className="muted" style={{ color: "#cfe0f3" }}>Prototype on synthetic data. Codebasics AI PM capstone.</span>
       </header>
       <main>
         {tab === "review" && <Review />}
@@ -419,7 +419,7 @@ function About() {
         <li><b>Guardrails in code:</b> every quote is matched back to the source text and unmatched quotes are counted; phrases like "safe to sign" are filtered; the brief always carries the label; the suggested next step is a field, never an action. The app has no ability to send, sign or change a document.</li>
       </ol>
       <p><b>Never:</b> sign, approve, send, give legal advice, call a contract safe, or set negotiation thresholds. A person decides every contract.</p>
-      <p className="muted">Synthetic dataset from the Codebasics AI PM Cohort capstone. No real client, contract or legal advice. Names, rates and identifiers would be masked before any model call on real contracts; the prototype skips masking because the data is synthetic.</p>
+      <p className="muted">Synthetic dataset from the Codebasics AI PM capstone. No real client, contract or legal advice. Names, rates and identifiers would be masked before any model call on real contracts; the prototype skips masking because the data is synthetic.</p>
     </div>
   );
 }
