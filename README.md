@@ -4,6 +4,8 @@ A review assistant for a founder-led IT services company with no legal team. It 
 
 Built by Rahul for the Codebasics AI PM capstone. All data is synthetic. Not legal advice.
 
+**Capstone deliverables** (user research worksheet, opportunity map, PRD, cost estimate, presentation and demo video) are in the [Submission folder](Submission/), with an index in its [README](Submission/README.md).
+
 **Live prototype:** https://atliq-contract-risk-analyzer-teal.vercel.app (Vercel free tier, auto-deployed from `main`). Model: Claude Sonnet 5.
 
 ## What it does
