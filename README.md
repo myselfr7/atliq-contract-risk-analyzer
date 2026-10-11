@@ -9,7 +9,7 @@ Built by Rahul for the Codebasics AI PM capstone. All data is synthetic. Not leg
 ## What it does
 
 1. **Header facts** are extracted from the contract into a fixed schema (parties, AtliQ entity, country, law, courts, data types, documents referenced, insurance, payment days).
-2. **Rules, no AI** (`data/rules.json`, `lib/pipeline.mjs` → `applyRules`): entity vs country, governing law vs the entity's home law, regulated data types, documents the deal type needs, numeric gaps such as insurance. Every regulatory point is a flag to confirm with counsel.
+2. **Rules, no AI** (`data/rules.json`, `lib/pipeline.mjs` → `applyRules`): the rule is fixed in code and reads the facts from step 1, which are shown for checking: entity vs country, governing law vs the entity's home law, regulated data types, documents the deal type needs, numeric gaps such as insurance. Every regulatory point is a flag to confirm with counsel.
 3. **Register check**: the deal is compared with the confirmed obligations register (`data/register.json`, built once from the 17 signed contracts). Conflicts are reported only with both clauses quoted. Expired restrictions that would otherwise have applied are listed as checked, so the reviewer can see they were considered.
 4. **Clause by clause**: every clause gets a type, a plain-English line, a verdict (fine / needs attention / conflict), the quoted text, and past positions from the negotiation history, shown as history, never policy.
 5. **Mutuality**: clauses labelled mutual, and AtliQ's own paper, are checked for one-sidedness in both directions.
@@ -30,7 +30,7 @@ npm install
 echo ANTHROPIC_API_KEY=sk-ant-... > .env          # never commit this file
 node scripts/build_contracts_index.mjs          # public/contracts.json for the picker
 node scripts/build_register.mjs                 # one-time: extracts the register (measured $0.96 at list prices; resumable)
-npm run test:golden                             # runs the 8 trap scenarios (measured $0.09 to $0.19 per contract on Claude Sonnet 5, about $1.25 per run)
+npm run test:golden                             # runs the 8 golden contracts (measured $0.09 to $0.19 per contract on Claude Sonnet 5, about $1.25 per run)
 node scripts/dev_server.mjs                     # local test server on :3000 serving dist/ and /api/review (no extra tools)
 npx vercel dev                                  # local site + /api/review (plain `vite` does not serve the API)
 ```
@@ -69,5 +69,5 @@ The cost estimate made before the build assumed $0.15 per review. The register a
 - No login. Role-based access is specified in the PRD, not built.
 - No PDF upload; contracts are chosen from the dataset or pasted as text.
 - No masking of names and rates before the model call, because the data is synthetic. The PRD requires it for real contracts.
-- Precedent uses the negotiation notes in full (about 1,500 words) rather than vector search.
+- Precedent uses the negotiation notes in full (about 1,100 words) rather than vector search.
 - Register entries are marked confirmed after the author's review; in production Karandeep confirms each one.

@@ -1,4 +1,4 @@
-// Golden test: runs the seven trap scenarios from the capstone brief through the pipeline locally and
+// Golden test: runs eight contracts covering the trap scenarios from the capstone brief (plus BlueOrchid) through the pipeline locally and
 // checks the expected signals. Writes data/golden_results.json and public/golden_results.json.
 // Run: node scripts/golden_test.mjs [id ...]   (needs ANTHROPIC_API_KEY in .env). Each run costs real money.
 import fs from "node:fs";

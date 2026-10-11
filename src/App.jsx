@@ -330,7 +330,7 @@ function Golden() {
   if (!res) return <div className="card">Loading...</div>;
   return (
     <div className="card">
-      <h2>Golden test set: the seven trap scenarios from the brief</h2>
+      <h2>Golden test set: eight contracts covering the brief's trap scenarios</h2>
       <p className="muted">Last run {res.run_at ? new Date(res.run_at).toLocaleString() : "never"} on {res.model}: {res.passed} of {res.total} passed. Run with <code>npm run test:golden</code>; each run calls the model and costs real money, so results are stored rather than re-run on page load.</p>
       <table><thead><tr><th>Result</th><th>Contract</th><th>Scenario</th><th>Conflicts</th><th>Next step</th><th>Clauses</th><th>Unverified quotes</th><th>Cost</th><th>Time</th></tr></thead><tbody>
         {(res.results || []).map((g) => (
